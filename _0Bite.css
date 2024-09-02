@@ -1,0 +1,20 @@
+.back{
+    position: absolute;
+    top: 40%;
+    left: 10%;
+}
+.back a button{
+    padding: 6px 10px;
+    border-radius: 20%;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(204, 227, 157, 0.959);
+    font-size: 15px;
+    color: rgb(0, 0, 0);
+    box-shadow: 1.3px 1.6px 2px #032f3f;
+    transition: all 400ms ease;
+    cursor: pointer;
+}
+.back a button:hover{
+    box-shadow: none;
+}
+/*=-==================*/

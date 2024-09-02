@@ -1,0 +1,140 @@
+.alert-container,
+.consultPopUp{
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.alert-container .alert{
+    padding: 20px;
+    text-align: center;
+    width: 270px;
+    height: 200px;
+    background-color: #ffffff7c;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 1px 1.5px 2px #0303036e;
+    border-radius: 5px;
+    backdrop-filter: blur(20px);
+    border: 1px solid #ffffff;
+}
+.alert h2{
+    padding: 10px;
+}
+.alert .btns{
+    margin-top: 20px;
+
+}
+.alert .btns button{
+    padding: 10px;
+    margin: 5px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    border-radius: 5px;
+    color: #fffdfd;
+    cursor: pointer;
+    transition: all 400ms ease;
+}
+#back, #No
+{
+    background-color: #032f3fa0;
+}
+#yes, #Yes
+{
+    background-color: rgb(12, 159, 105);
+}
+#back:hover,
+#yes:hover,
+#Yes:hover,
+#No:hover{
+    background-color: #a8c97d;
+}
+#Yes,
+#No{
+    padding: 5px 22px;
+}
+
+/*====================================*/
+.consultPopUp .PopUp{
+    width: 800px;
+    height: 250px;
+    background-color: #ffffff42;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 1px 1.5px 2px #0303036e;
+    border-radius: 5px;
+    backdrop-filter: blur(20px);
+    border: 1px solid #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+.PopUp p{
+    font-size: 16px;
+}
+.PopUp button{
+    margin-top: 20px;
+    padding: 7px;
+    background-color: rgb(12, 159, 105);
+    color: rgb(255, 255, 255);
+    font-family: 'Poppins', sans-serif;
+    font-size: 19px;
+    cursor: pointer;
+}
+/*---------------------------------------*/
+.confirm{
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.confirm .alert{
+    padding: 20px;
+    width: 20%;
+    height: 15rem;
+    background-color: #ffffffbc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    box-shadow: 1px 1.5px 2px #0303036e;
+    border-radius: 5px;
+    backdrop-filter: blur(20px);
+    border: 1px solid #ffffff;
+    text-align: center;
+}
+.confirm .alert .btns{
+    margin-top: 20px;
+
+}
+.confirm .alert .btns button{
+    padding: 10px;
+    margin: 5px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    border-radius: 5px;
+    color: #fffdfd;
+    cursor: pointer;
+    transition: all 400ms ease;
+}
+#change
+{
+    background-color: #032f3fa0;
+}
+#YES
+{
+    background-color: rgb(12, 159, 105);
+}
+#change:hover,
+#YES:hover
+{
+    background-color: #a8c97d;
+}

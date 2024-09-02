@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+main{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(230, 230, 230, 0.078);
+}
+.topNav{
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    background-color: #0d5389;
+    line-height: 40px;
+    align-items: center;
+    display: flex;
+}
+.topNav .adminProfile{
+    position: absolute;
+    right: 3rem;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: 200;
+}
+.adminProfile .adminImage{
+    margin-left: 20px;
+    display: flex;
+}
+.adminProfile .adminName{
+    font-size: 14px;
+}
+.topNav .date{
+    display: flex;
+}
+.date p{
+    font-size: 16px;
+    font-weight: 600;
+    color:#ffffff;
+}
+.current-time{
+    padding: 5px 20px;
+    position: relative;
+}
+.current-date{
+    padding: 5px 20px;
+    position: relative;
+}
+/*================CONTAINER==============*/
+.container{
+    position: absolute;
+    top: 3rem;
+    width: 100%;
+    display: flex;
+    font-family: 'Poppins';
+}
+.sideNav{
+    height: 92vh;
+    width: 100px;
+    background-color: #ffffff;
+}
+.sideNav a{
+    display: flex;
+    color: #11376a;
+    margin: 5px 0 0 2rem;
+    gap: 1rem;
+    align-items: center;
+    position: relative;
+    height: 5rem;
+    transition: all 1s ease;
+}
+.out {
+    display: inline-block; 
+    transform: rotate(180deg);
+    transition: transform 0.5s ease;
+}
+.sideNav a.active{
+    color: #13627e;
+    margin-left: 0;
+    background-color: #0d85890b;
+    
+}
+.sideNav a.active:before{
+    content: '';
+    width: 6px;
+    height: 100%;
+    background: #0d8964;
+    
+}
+.sideNav a.active span{
+    color: #13627e;
+    margin-left: calc(1rem - 3px);
+    
+}
+
+.sideNav a:hover span{
+    color: #126731;
+    font-size: 27px;
+
+}
+.timer{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.timer .token_Num{
+    text-align: center;
+    padding: 10px;
+}
+.timer .token_Num h3{
+    padding: 5px;
+    text-transform: uppercase;
+}
+.timer .pad{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    height: 500px;
+    background-color: #dcdcdc25;
+    box-shadow: 1px 2px 2px #021b2337;
+}
+.timer .pad p{
+    font-size: 70px;
+    color: black;
+}
+#time-label{
+    position: relative;
+    top: 30%;
+    font-size: 15px;
+    font-weight: 600;
+    color: #636363;
+}
+/*====================================*/
+.right{
+    width: 33%;
+    padding: 20px;
+}
+.right .token_Num{
+    box-shadow: 1px 2px 2px #021b2337;
+    text-align: center;
+    height: 200px;
+    padding: 10px;
+    border-radius: 2px;
+}
+.right .token_Num h3{
+    padding: 5px;
+    background-color: #0d8989;
+    color: white;
+    font-weight: 500;
+}
+.right .token_Num p{
+    font-size: 30px;
+    font-weight: 600;
+    color: #1f646d;
+    background-color: #d7d7d74d;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btns1{
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+.btns2{
+    margin-top: 10px;
+    display: block;
+}
+.btns1 button,
+.btns2 button{
+    width: 100%;
+    padding: 30px;
+    font-size: 20px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    background-color: #0f689b;
+    color: white;
+    box-shadow: 1px 2px 2px #00121872;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 300ms ease;
+    border: 1px solid #0f689b;
+}
+.btns2 button{
+    margin-bottom: 10px;
+}
+.btns1 button:hover{
+    box-shadow: none;
+    background-color: #e3e3e38b;
+    color: #11376a;
+}
+.btns2 button:hover{
+    box-shadow: none;
+    background-color: #e3e3e38b;
+    color: #11376a;
+}
+#end{
+    background-color: #327941;
+}
+#end:hover{
+    background-color: #e3e3e38b;
+}
+.in-que {
+    margin-top: 1rem;
+    box-shadow: 1px 1px 1px 2px #021b2337;
+    text-align: center;
+    width: 450px;
+    padding: 10px;
+    border-radius: 2px;
+}
+.in-que h3{
+    font-size: 15px;
+    color:#11376a;
+}
+.col-container {
+    display: grid;
+    grid-template-columns: 4rem 13rem 5.5rem auto;
+    gap: 1px; 
+}
+.col {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 2px;
+    margin-top: 10px;
+}
+
+.col ul {
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    justify-content: center;
+    padding: 0; 
+    margin: 0; 
+}
+
+.col ul li {
+    height: 65px;
+    background-color: #0d538908;
+    font-weight: 500;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    list-style: none;
+    padding: 2px;
+    font-size: 14px;
+}
+.num ul li{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.col ul li button{
+    width: 100%;
+    height: 100%;
+    background-color: #12833cc4;
+    box-shadow: 1px 0.5px 1px 1.4px #021b2337;
+    color: white;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 400ms ease;
+}
+.col ul li button:hover{
+    box-shadow: none;
+}

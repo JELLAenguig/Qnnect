@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0%;
+    padding: 0%;
+    border: 0;
+    appearance: none;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+html{
+    font-size: 14px;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    user-select: none;
+    overflow-x: hidden;    
+}
+.search form{
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+  
+.wrap .search form .searchTerm {
+    width: 100%;
+    border: 3px solid #f7ffff11;
+    border-right: none;
+    padding: 5px;
+    height: 30px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #000000;
+  }
+  
+.searchTerm:focus{
+    color: black;
+}
+ .searchButton span{
+    font-size: 16px;
+}
+.searchButton {
+    width: 40px;
+    height: 30px;
+    background:  #fff;
+    text-align: center;
+    color: #0f0f0f;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 25px;
+}
+.wrap{
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/*------------------------------------------*/
+.topNav{
+    position: absolute;
+    width: 100%;
+    background-color: #0d5389;
+    line-height: 50px;
+    align-items: center;
+    display: flex;
+}
+.topNav .adminProfile{
+    position: absolute;
+    right: 3rem;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: 200;
+}
+.adminProfile .adminImage{
+    margin-left: 20px;
+    display: flex;
+}
+.adminProfile .adminName{
+    font-size: 14px;
+}
+.topNav .date{
+    display: flex;
+}
+.date p{
+    font-size: 16px;
+    font-weight: 600;
+    color:#ffffff;
+}
+.current-time{
+    padding: 5px 20px;
+    position: relative;
+}
+.current-date{
+    padding: 5px 20px;
+    position: relative;
+}
+.MainContainer{
+    display: grid;
+    width: 100%;
+    gap: 1rem;
+    grid-template-columns: 14rem auto 0rem;
+}
+.logo{
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+.logo h2{
+    text-align: center;
+    font-size: 30px;
+    color: rgb(12, 79, 28);
+}
+/*SIDE BAR*/
+aside{
+    height: 100vh;
+    background-color: #e9e9e918;
+    box-shadow: 1px 0px 2px #0e3c5f37;
+}
+aside .top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 6rem;
+}
+aside .close{
+    display: none;
+}
+/*========================*/
+aside .sidebar{
+    display: flex;
+    flex-direction: column;
+    height: 76vh;
+    position: relative;
+    top: 2rem;
+}
+aside h3{
+    font-weight: 500;
+    font-size: 14px;
+}
+aside .sidebar a{
+    display: flex;
+    color: #11376a;
+    margin: 5px 0 0 2rem;
+    gap: 1rem;
+    align-items: center;
+    position: relative;
+    height: 5rem;
+    transition: all 300ms ease;
+}
+
+aside .sidebar a span{
+    color: #11376a;
+    font-size: 1.8rem;
+    transition: all 300ms ease;
+}
+.out {
+    display: inline-block; /* Ensure the element respects transform properties */
+    transform: rotate(180deg); /* Set the desired fixed rotation angle */
+    transition: transform 0.5s ease; /* Optional: Smooth transition effect for rotation */
+}
+aside .sidebar a.active{
+    background: #e3e3e338;
+    backdrop-filter: blur(10px);
+    color: #13627e;
+    margin-left: 0;
+    
+}
+aside .sidebar a.active:before{
+    content: '';
+    width: 6px;
+    height: 100%;
+    background: #0d5389;
+    
+}
+aside .sidebar a.active span{
+    color: #13627e;
+    margin-left: calc(1rem - 3px);
+    
+}
+aside .sidebar a:hover{
+    color: #126731;
+}
+aside .sidebar a:hover span{
+    color: #126731;
+    margin-left: 1rem;
+}
+aside .sidebar .logout-btn{
+    margin-top: 30vh;
+}
+/*-----------------------------*/
+main{
+    margin-top: 2rem;
+    width: 100%;
+}
+/*================MEDIA QUERIES======================*/
+@media screen and (max-width: 1200px){
+    .MainContainer{
+        width: 100%;
+        grid-template-columns: 7rem auto 0rem;
+    }
+    aside .logo{
+        display: none;
+    }
+    
+    aside .sidebar h3{
+        display: none;
+
+    }
+    aside .sidebar a{
+        width: 5.6rem;
+    }
+
+    
+}
+@media screen and (max-width: 768px){
+    body{
+        overflow-x: auto;
+    }
+    aside {
+        display: none;
+        position: fixed;
+        left: -100%;
+        background: var(--color-white);
+        width: 18rem;
+        z-index: 3;
+        box-shadow: 0rem 2rem 2rem #2d2e302d;
+        height: 100%;
+        padding-right: var(--card-padding);
+        animation: showMenu 0.3s ease forwards;
+    }
+
+    @keyframes showMenu {
+        to{
+            left: 0;
+        }
+    }
+    aside .logo{
+        display: inline;
+        width: 80%;
+    }
+    aside .sidebar h3{
+        display: inline;
+    }
+    aside .sidebar a{
+        width: 100%;
+        height: 3.4rem;
+    }
+    aside .close{
+        display: inline-block;
+        cursor: pointer;
+        padding: 10px;
+    }
+}
