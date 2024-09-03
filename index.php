@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="__01index.css">
-    <link rel="stylesheet" href="_3alertBox.css">
+    <link rel="stylesheet" href="__alertBox.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Mariveles || RHU Q-nnect</title>
 </head>
@@ -59,7 +59,7 @@
 
     <div class="crdts">
         <div class="kiosklogo">
-            <img src="QNNECT LOGO.png">
+            <img src="qnnect.png">
         </div>
     </div>
 

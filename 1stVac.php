@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="__01index.css">
     <link rel="stylesheet" href="_0Bite.css">
-    <link rel="stylesheet" href="_3alertBox.css">
+    <link rel="stylesheet" href="__alertBox.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>AnimalBite || RHU Q-nnect</title>
@@ -17,7 +17,7 @@
     </div>
     <div class="instr">
         <p id="q1">Animal Bite</p>
-        <p id="q2">Please select the type of vaccine</p>
+        <p id="q2">Please select the day of vaccine</p>
     </div>
     <div class="logos">
         <div class="logo left-logo">
@@ -34,13 +34,6 @@
                 <button id="back">Change</button>
                 <button id="yes">Yes</button>
             </div>
-        </div>
-    </div>
-    <div class="Booster">
-        <div class="booster">
-            <button class = "btns" id="Day0">Day 0</button>
-            <button class = "btns" id="Day3">Day 3</button>
-            <button class = "btns" id="Day7">Day 7</button>
         </div>
     </div>
     <div class="back">
@@ -65,7 +58,7 @@
 
     <div class="crdts">
         <div class="kiosklogo">
-            <img src="QNNECT LOGO.png" alt="Kiosk Logo">
+            <img src="qnnect.png" alt="Kiosk Logo">
         </div>
     </div>
     <script src="Submit_Form.js"></script> 

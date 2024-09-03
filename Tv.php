@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Screen Display || RHU Q-NNECT</title>
-    <link rel="stylesheet" href="_1bcreen.css">
+    <link rel="stylesheet" href="_3bcreen.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 <body>
     <main>
         <div class="logo">
-                <img src="file.png" alt="Logo">
+                <img src="LGU LOGO NEW.png" alt="Logo">
             </div>
         <div class="top">
             <div class="top-top">
@@ -71,16 +72,20 @@
 
             <div class="media">
                 <div class="vid">
-                    <!-- Video content or placeholder -->
+                    <video src="" autoplay loop></video>
                 </div>
                 <div class="additional">
-
+                    <img src="qnnectLOGO.png" alt="">
                 </div>
             </div>
         </div>
     </main>
     <div class="btm">
-        
+        <ul>
+            <li><i class="fas fa-globe" aria-hidden="true"></i> <p>marivelesbataangov.ph</p></li>
+            <li><i class="fas fa-envelope" aria-hidden="true"></i> <p>arivelesrhu1@gmail.com</p></li>
+            <li><i class="fas fa-phone" aria-hidden="true"></i> <p>(047) 935 - 1757 loc. 120</p></li>
+        </ul>
     </div>
     <script>
         function updateDateTime() {

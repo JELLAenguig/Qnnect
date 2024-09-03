@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="__01index.css">
     <link rel="stylesheet" href="_0Bite.css">
-    <link rel="stylesheet" href="_3alertBox.css">
+    <link rel="stylesheet" href="Boost.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>AnimalBite || RHU Q-nnect</title>
@@ -17,7 +17,7 @@
     </div>
     <div class="instr">
         <p id="q1">Booster</p>
-        <p id="q2">Please select the type of vaccine</p>
+        <p id="q2">Please select the day of vaccine</p>
     </div>
     <div class="logos">
         <div class="logo left-logo">
@@ -28,10 +28,10 @@
         </div>
     </div>
     <div class="confirm">
-        <div class="alert">
+        <div class="pad">
             <p>Are you sure for your chosen service?</p>
-            <div class="btns">
-                <button id="change">Change</button>
+            <div class="cbtn">
+                <button id="BACK">Change</button>
                 <button id="YES">Yes</button>
             </div>
         </div>
@@ -55,9 +55,43 @@
 
     <div class="crdts">
         <div class="kiosklogo">
-            <img src="QNNECT LOGO.png" alt="Kiosk Logo">
+            <img src="qnnect.png" alt="Kiosk Logo">
         </div>
     </div>
-    <script src="Boost.js"></script> 
+    <script>
+        $(document).ready(function(){
+    let dayOption = null;
+    
+    $('.btns').on('click', function() {
+        dayOption = $(this).attr('id'); 
+        $('.confirm').css({
+            display: 'flex' // Show the alert container
+        });
+    });
+
+    $('#BACK').on('click', function() {
+    console.log('BACK button clicked');
+    $('.confirm').css({
+        display: 'none'
+    });
+});
+
+    $('#YES').on('click', function() {
+        const serviceMapping = {
+            'D0': 'Day 0 (Booster)',
+            'D3': 'Day 3 (Booster)',
+            'D7': 'Day 7 (Booster)',
+        };
+
+        if (serviceMapping[dayOption]) {
+            $('#GenService').val("Animal Bite");
+            $('#serviceInput').val(serviceMapping[dayOption]); 
+            $('#hiddenForm').submit();
+        }
+        
+        $('.confirm').css('display', 'none'); // Hide the alert container
+    });
+});
+    </script> 
 </body>
 </html>
