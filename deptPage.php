@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="_3dept.css">
+    <link rel="stylesheet" href="_-dept.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Staff || RHU Q-nnect</title>
 </head>
@@ -82,9 +82,9 @@
                 <div class="col-container">
                     <div class="col num">
                         <ul>
-                            <li>A001</li>
                             <li>A002</li>
                             <li>A003</li>
+                            <li>A004</li>
                         </ul>
                     </div>
                     <div class="col name">

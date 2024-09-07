@@ -1,0 +1,167 @@
+.report-box {
+    position: absolute;
+    top: 4.9rem;
+    width: 100%;
+    display: flex;
+    gap: 1rem;  
+    height: 70%;
+}
+.served-body{
+    width: 50%;
+    height: 100%;
+    background-color: var(--pad-background);
+    padding: 10px;
+    box-shadow: var(--pad-box-shadow);
+    border-radius: var(--box-borderRadius);
+}
+.served-body h3{
+    text-align: center;
+    border-bottom: 1px solid var(--color-header);
+    color: var(--color-primary);
+    padding: 3px;
+    width: 100%;
+}
+.year-option{
+    width: 100%;
+    padding: 3px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    background-color: var(--pad-background);
+    box-shadow: var(--pad-box-shadow);
+    text-align: center;
+    border-radius: var(--box-borderRadius);
+    margin-bottom: 0.9rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+.served-body .print-btn{
+    padding: 0 10px;
+    display: flex;
+    gap: 1rem;
+}
+.served-body button{
+    margin-top: 0.5rem;
+    padding: 5px;
+    border: none;
+    background-color: #dddddd60;
+    box-shadow: 1px 1px 1px #4c4c4c68;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+.served-body button:hover{
+    box-shadow: none;
+    background-color: rgba(16, 71, 53, 0.092);
+}
+canvas{
+    width: 100% !important;
+    height: 78% !important;
+}
+/*---------------------------------------*/
+.cases{
+    background-color: var(--pad-background);
+    box-shadow: var(--pad-box-shadow);
+    border-radius: var(--box-borderRadius);
+    padding: 0.5%;
+    height: 100%;
+}
+.box-pad{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+.cases h3{
+    padding: 1%;
+    background-color: #dddddd0f;
+    text-align: center;
+    color: var(--color-primary);
+}
+.table h4{
+    font-size: 15px;
+    background-color: var(--color-header);
+    color: var(--font-color-white);
+    font-weight: 500;
+}
+.year1 h4, .year2 h4 {
+    position: relative;
+    line-height: 1.5; 
+    cursor: pointer;
+}
+
+.year1 h4 i, .year2 h4 i {
+    position: absolute;
+    right: 0.5rem;
+    top: 30%;
+    transform: translateY(-50%);
+}
+
+.cases .table{
+    width: 100%;
+    height: 100%;
+    gap: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.cases .table ul{
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.cases .table .month ul li{
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    height: 3.5vh;
+    width: 100%;
+    background-color: #5e9c96;
+    color: var(--font-color-white);
+}
+.cases .table ul li{
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    height: 3.5vh;
+    width: 100%;
+    background-color: aliceblue;
+}
+.total{
+    margin-top: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    width: 100%;
+    background-color: rgba(6, 107, 73, 0.14);
+}
+/*---------------------------------------*/
+@media screen and (max-width: 1768px){
+    .cases{
+        width: 34.5%;
+    }
+}
+@media screen and (max-width: 768px){
+    .cases{
+        width: 46%;
+    }
+}
+@media screen and (min-height: 795.5px){
+    .served-body{
+        height: 80%; 
+    }
+    .cases{
+        height: 80%;
+    }
+    .cases .table .month ul li{
+        height: 2.8vh;
+        
+    }
+    .cases .table ul li{
+        height: 2.8vh;
+    }
+}

@@ -5,7 +5,7 @@ include "DB.php"; // Include your database connection script
 $nextQueueNumber = '';
 $service = '';
 $now = '';
-
+$patientsAhead = 0;
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['service'])) {
     $service = $_POST['service'];
 
@@ -48,12 +48,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['service'])) {
     $lastTicket = $row['lastTicket'];
     $lastNumber = $lastTicket ? intval(substr($lastTicket, 1)) : 0;
 
-    // Generate the next ticket number with the appropriate prefix
     $nextQueueNumber = generateQueueNumber($lastNumber, $prefix);
 
-    // Get current date and time in the format 'Y-m-d H:i:s'
     $now = new DateTime();
     $dateStamp = $now->format('Y-m-d H:i:s');
+
+    $stmt = $conn->prepare("SELECT COUNT(*) AS patientsAhead FROM $tableName WHERE TicketNum < ? AND TicketNum LIKE ?");
+    $stmt->bind_param('ss', $nextQueueNumber, $likePattern);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+    $patientsAhead = $row['patientsAhead'];
 }
 ?>
 
@@ -64,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['service'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ticket</title>
-    <link rel="stylesheet" href="_ticket.css">
+    <link rel="stylesheet" href="_Ticket.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -75,36 +80,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['service'])) {
     </div>
     <div class="ticket">
         <div class="box">
-            <div class="display">
+        <div class="display">
                 <div class="logo">
                     <div class="logo left-logo">
                         <img src="LGU LOGO NEW.png" alt="LGU Logo">
                     </div>
+                    <div class="title">
+                        <h2>Mariveles <br> Rural Health Unit</h2>
+                    </div><br>
                     <div class="logo right-logo">
                         <img src="MHO LOGO_NEW.png" alt="MHO Logo">
                     </div>
                 </div>
-                <div class="title">
-                    <h2>Mariveles <br> Rural Health Unit</h2>
-                </div><br>
-
-                    <div class="qnum">
-                        <h1 class="TicketNum"><?php echo htmlspecialchars($nextQueueNumber); ?></h1>
+                <div class="qnum">
+                    <h1 class="TicketNum"><?php echo htmlspecialchars($nextQueueNumber); ?></h1>
+                </div>
+                <div class="service">
+            
+                    <h3 class="spec"><?php echo htmlspecialchars($service); ?></h3>
+                    <div class="date">
+                        <span id="time"></span>
+                        <span id="date"></span>
                     </div>
-                    <div class="service">
-                        <h3><?php echo htmlspecialchars($service); ?></h3>
-                    </div>
+                </div>
 
                 <div class="qnecct-logo">
                     <img src="qnnect.png" alt="QNNECT Logo">
                 </div>
                 <div class="contain">
-                    <div class="date">
-                        <br><br>
-                        <span id="time"></span>
-                        <span id="date"></span>
-                    </div>
-                    <br>
+                    <h4 id="queueMessage" data-patients-ahead="<?php echo htmlspecialchars($patientsAhead); ?>"></h4>
                     <small>Please wait for your number to be called.</small>
                 </div>
                 
@@ -113,7 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['service'])) {
         </div>
     </div>
     <script>
-         $(document).ready(function() {
+        $(document).ready(function() {
             function updateTimeAndDate() {
                 const now = new Date();
                 const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
@@ -128,6 +132,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['service'])) {
 
             // Update the time every minute
             setInterval(updateTimeAndDate, 60000);
+
+            // Update queue message based on number of patients ahead
+            const patientsAhead = parseInt($('#queueMessage').data('patients-ahead'), 10);
+            let message = '';
+            if (patientsAhead === 0) {
+                message = "There are no patients ahead of you in the queue.";
+            } else if (patientsAhead === 1) {
+                message = "There is 1 patient ahead of you in the queue.";
+            } else {
+                message = `There are ${patientsAhead} patients ahead of you in the queue.`;
+            }
+            $('#queueMessage').text(message);
 
             $('#print').click(function() {
                 $.ajax({

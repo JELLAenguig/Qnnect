@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="_3Admin.css">
-        <link rel="stylesheet" href="_mainAdmin.css">
+        <link rel="stylesheet" href="_allStyle.css">
+        <link rel="stylesheet" href="_dash.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <title>ADMIN || RHU Q-NNECT</title>
     </head>
@@ -93,7 +93,7 @@
             <main>
                 <div class="wrapper">
                     <div class="current-que">
-                        <div class="pad">
+                        
                             <h3>Queue Status</h3>
                             <div class="col-container">
                                 <div class="col">
@@ -127,7 +127,6 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
                     </div>
                     <!------------------------------------------------->
                     <div class="right-pad">
@@ -164,14 +163,120 @@
                             </div>
                         </div>
                         <div class="bite-stat">
-                            <h2>Animal Bite Cases</h2>
-                        
+                            <div class="card-body">
+                                <canvas id="myChart"></canvas>
+                            </div>
+
+                            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+                            <script>
+                                const ctx = document.getElementById('myChart').getContext('2d');
+
+                                new Chart(ctx, {
+                                    type: 'bar',
+                                    data: {
+                                        labels: ['Consultation', 'Laboratory', 'X-Ray', 'ECG', 'Ultrasound', 'Animal Bite'],
+                                        datasets: [
+                                            {
+                                                label: 'Daily',
+                                                data: [100, 72, 23, 39, 23, 150],
+                                                borderWidth: 2,
+                                                backgroundColor: '#057b98b5'
+                                            },
+                                            {
+                                                label: 'Monthly',
+                                                data: [800, 604, 623, 434, 502, 1066],
+                                                borderWidth: 2,
+                                                backgroundColor: '#35d8cac5'
+                                            },
+                                            {
+                                                label: 'Yearly',
+                                                data: [1300, 2304, 1432, 1234, 1502, 4006],
+                                                borderWidth: 2,
+                                                backgroundColor: '#d8d835c5'
+                                            }
+                                        ]
+                                    },
+                                    options: {
+                                        responsive: true,
+                                        maintainAspectRatio: false,
+                                        plugins: {
+                                            legend: {
+                                                labels: {
+                                                    font: {
+                                                        family: 'Arial',   // Font family for legend
+                                                        size: 14,          // Font size for legend
+                                                        weight: 'normal',    // Font weight for legend
+                                                        style: 'normal'    // Font style for legend
+                                                    }
+                                                }
+                                            },
+                                            tooltip: {
+                                                callbacks: {
+                                                    title: function(tooltipItems) {
+                                                        return tooltipItems[0].label;
+                                                    },
+                                                    label: function(tooltipItem) {
+                                                        return tooltipItem.dataset.label + ': ' + tooltipItem.raw;
+                                                    }
+                                                },
+                                                titleFont: {
+                                                    family: 'Arial',   // Font family for tooltip title
+                                                    size: 16,          // Font size for tooltip title
+                                                    weight: 'bold',    // Font weight for tooltip title
+                                                    style: 'normal'    // Font style for tooltip title
+                                                },
+                                                bodyFont: {
+                                                    family: 'Arial',   // Font family for tooltip body
+                                                    size: 14,          // Font size for tooltip body
+                                                    weight: 'normal',  // Font weight for tooltip body
+                                                    style: 'normal'    // Font style for tooltip body
+                                                }
+                                            },
+                                            title: {
+                                                display: true,
+                                                text: 'Service Statistics',
+                                                font: {
+                                                    family: 'Arial',   // Font family for title
+                                                    size: 18,          // Font size for title
+                                                    weight: 'normal',    // Font weight for title
+                                                    style: 'normal'    // Font style for title
+                                                }
+                                            }
+                                        },
+                                        scales: {
+                                            x: {
+                                                ticks: {
+                                                    font: {
+                                                        family: 'Arial',   // Font family for x-axis labels
+                                                        size: 12,          // Font size for x-axis labels
+                                                        weight: 'normal',  // Font weight for x-axis labels
+                                                        style: 'normal'    // Font style for x-axis labels
+                                                    }
+                                                }
+                                            },
+                                            y: {
+                                                ticks: {
+                                                    font: {
+                                                        family: 'Arial',   // Font family for y-axis labels
+                                                        size: 12,          // Font size for y-axis labels
+                                                        weight: 'normal',  // Font weight for y-axis labels
+                                                        style: 'normal'    // Font style for y-axis labels
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                });
+                            </script>
+
                         </div>
                     </div>
                     
                 </div>
                 <div class="overview">
                     <h2>Overview of Patient Queue</h2>
+                    <div class="table-cont">
                     <table>
                         <thead>
                             <tr>
@@ -181,9 +286,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                                        
+
                         </tbody>
                     </table>
+                    </div>
+
                 </div>
                 
             </main>

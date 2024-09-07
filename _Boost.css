@@ -1,0 +1,69 @@
+/* Container for the confirmation popup */
+.confirm {
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none; 
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+}
+
+
+.confirm .pad {
+    padding: 20px;
+    text-align: center;
+    width: 270px;
+    height: 200px;
+    background-color: #ffffff9e; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 1px 1.5px 2px #0303036e;
+    border-radius: 5px;
+    backdrop-filter: blur(20px);
+    border: 1px solid #ffffff;
+}
+
+
+.alert .cbtns {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+#BACK {
+    background-color: #032f3fa0;
+    padding: 10px;
+    margin: 5px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    border-radius: 5px;
+    color: #fffdfd;
+    cursor: pointer;
+    transition: all 400ms ease;
+}
+
+#BACK:hover {
+    background-color: #a8c97d;
+}
+
+
+#YES {
+    background-color: rgb(12, 159, 105);
+    padding: 10px;
+    margin: 5px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    border-radius: 5px;
+    color: #fffdfd;
+    cursor: pointer;
+    transition: all 400ms ease;
+}
+
+#YES:hover {
+    background-color: #a8c97d;
+}
