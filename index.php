@@ -55,6 +55,7 @@
 
     <form id="hiddenForm" action="Aticket.php" method="post" style="display: none;">
         <input type="hidden" id="serviceInput" name="service" />
+        <input type="hidden" id="priorType" name="priorType"/>
     </form>
 
     <div class="crdts">

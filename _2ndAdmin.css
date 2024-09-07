@@ -63,9 +63,9 @@ main{
 .topNav{
     z-index: 10;
     position: absolute;
-    width: 100vw;
+    width: 100%;
     background-color: var(--color-primary);
-    line-height: 40px;
+    line-height: 50px;
     align-items: center;
     display: flex;
 }
@@ -74,7 +74,7 @@ main{
     right: 3rem;
     display: flex;
     align-items: center;
-    color: var(--font-fff);
+    color: white;
     font-weight: 200;
 }
 .adminProfile .adminImage{
@@ -82,13 +82,13 @@ main{
     display: flex;
 }
 .adminProfile .adminName{
-    font-size: 1.9vh;
+    font-size: 14px;
 }
 .topNav .date{
     display: flex;
 }
 .date p{
-    font-size: 1.9vh;
+    font-size: 16px;
     font-weight: 600;
     color:#ffffff;
 }
