@@ -204,7 +204,7 @@
                                             legend: {
                                                 labels: {
                                                     font: {
-                                                        family: 'Arial',   // Font family for legend
+                                                        family: 'sans serif',   // Font family for legend
                                                         size: 14,          // Font size for legend
                                                         weight: 'normal',    // Font weight for legend
                                                         style: 'normal'    // Font style for legend
@@ -221,13 +221,13 @@
                                                     }
                                                 },
                                                 titleFont: {
-                                                    family: 'Arial',   // Font family for tooltip title
+                                                    family: 'Poppins',   // Font family for tooltip title
                                                     size: 16,          // Font size for tooltip title
                                                     weight: 'bold',    // Font weight for tooltip title
                                                     style: 'normal'    // Font style for tooltip title
                                                 },
                                                 bodyFont: {
-                                                    family: 'Arial',   // Font family for tooltip body
+                                                    family: 'Poppins',   // Font family for tooltip body
                                                     size: 14,          // Font size for tooltip body
                                                     weight: 'normal',  // Font weight for tooltip body
                                                     style: 'normal'    // Font style for tooltip body
@@ -237,9 +237,10 @@
                                                 display: true,
                                                 text: 'Service Statistics',
                                                 font: {
-                                                    family: 'Arial',   // Font family for title
-                                                    size: 18,          // Font size for title
-                                                    weight: 'normal',    // Font weight for title
+                                                    family: 'Poppins',   // Font family for title
+                                                    size: 15,          // Font size for title
+                                                    weight: '600',    // Font weight for title
+                                                    color: '#0d5389',
                                                     style: 'normal'    // Font style for title
                                                 }
                                             }

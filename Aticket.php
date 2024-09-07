@@ -151,8 +151,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['service'])) {
             });
         });
     </script>
-    <div class="qnecct-logo">
-        <img src="QNNECT LOGO.png" alt="">
-    </div>
+    
 </body>
 </html>

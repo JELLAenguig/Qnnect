@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="_allStyle.css">
-        <link rel="stylesheet" href="_Reports.css">
+        <link rel="stylesheet" href="_Reports_.css">
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
@@ -108,7 +108,7 @@
                         </div>
                     </div>
                     <div class="cases">
-                        <h3>Total Cases of Animal Bite Cases</h3>
+                        <h3>Total of Animal Bite Cases</h3>
                         <div class="box-pad">
                             <div class="table">
                                 <div class="month">
@@ -295,7 +295,31 @@
                         link.download = `chart.${format.split('/')[1]}`;
                         link.click();
                     }
-
+                    
+                    // Pie chart
+                    const pieCtx = document.getElementById('PieChart').getContext('2d');
+                    new Chart(pieCtx, {
+                        type: 'pie',
+                        data: {
+                            labels: ['Consultation', 'Laboratory', 'X-Ray', 'ECG', 'Ultrasound', 'Animal Bite'],
+                            datasets: [{
+                                label: 'Service Distribution',
+                                data: [1500, 1200, 600, 550, 500, 1300], // Sample data
+                                backgroundColor: [
+                                    'rgba(0, 123, 255, 0.5)',
+                                    'rgba(108, 66, 193, 0.5)',
+                                    'rgba(85, 224, 78, 0.5)',
+                                    'rgba(255, 193, 7, 0.5)',
+                                    'rgba(23, 162, 184, 0.5)',
+                                    'rgba(224, 78, 161, 0.5)'
+                                ],
+                                hoverOffset: 4
+                            }]
+                        },
+                        options: {
+                            responsive: true
+                        }
+                    });
                 </script>
 
 
