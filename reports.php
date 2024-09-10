@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="_allStyle.css">
-        <link rel="stylesheet" href="_Reports_.css">
+        <link rel="stylesheet" href="_ReportsPage_.css">
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
@@ -75,6 +75,10 @@
                         <span class="material-symbols-outlined">space_dashboard</span>
                         <h3>Dashboard</h3>
                     </a>
+                    <a href="Users.php">
+                        <span class="material-symbols-outlined">account_circle</span>
+                        <h3>Users</h3>
+                    </a>
                     <a href="reports.php" class="active">
                         <span class="material-symbols-outlined">lab_profile</span>
                         <h3>Reports</h3>
@@ -107,7 +111,17 @@
                             <button onclick="downloadImage('image/jpeg')">JPEG</button>
                         </div>
                     </div>
-                    <div class="cases">
+                    <div class="PieBox">
+                        <canvas id="PieChart"></canvas>
+                        <div class="print-btn">
+                            <button onclick="downloadPiePDF()">PDF</button>
+                            <button onclick="downloadPieImage('image/png')">PNG</button>
+                            <button onclick="downloadPieImage('image/jpeg')">JPEG</button>
+                        </div>
+                    </div>
+                    
+                <div class="SecChart">
+                <div class="cases">
                         <h3>Total of Animal Bite Cases</h3>
                         <div class="box-pad">
                             <div class="table">
@@ -193,7 +207,9 @@
                         </div>
                     </div>
                 </div>
-                
+                    
+                </div>
+                <div class="space"></div>
                 <script>
                     const ctx = document.getElementById('MonthlyChart').getContext('2d');
                     
@@ -301,25 +317,66 @@
                     new Chart(pieCtx, {
                         type: 'pie',
                         data: {
-                            labels: ['Consultation', 'Laboratory', 'X-Ray', 'ECG', 'Ultrasound', 'Animal Bite'],
+                            labels: ['First Vaccine', 'Booster'],
                             datasets: [{
                                 label: 'Service Distribution',
-                                data: [1500, 1200, 600, 550, 500, 1300], // Sample data
+                                data: [1500, 300], // Sample data
                                 backgroundColor: [
-                                    'rgba(0, 123, 255, 0.5)',
-                                    'rgba(108, 66, 193, 0.5)',
-                                    'rgba(85, 224, 78, 0.5)',
-                                    'rgba(255, 193, 7, 0.5)',
-                                    'rgba(23, 162, 184, 0.5)',
-                                    'rgba(224, 78, 161, 0.5)'
+                                    'rgb(32, 178, 170)',
+                                    'rgb(215, 183, 36)'
                                 ],
                                 hoverOffset: 4
                             }]
                         },
                         options: {
-                            responsive: true
+                            responsive: true,
+                            plugins: {
+                                legend: {
+                                    labels: {
+                                        font: {
+                                            size: 16 // Change this value to adjust label size
+                                        }
+                                    }
+                                }
+                            }
                         }
                     });
+                    function downloadPiePDF() {
+                        const pdfPieChart = document.getElementById('PieChart');
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+
+                        // Set canvas dimensions to match the PieChart dimensions
+                        canvas.width = pdfPieChart.width;
+                        canvas.height = pdfPieChart.height;
+
+                        // Fill the canvas background with white
+                        ctx.fillStyle = 'white';
+                        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                        // Draw the PieChart on top of the white background
+                        ctx.drawImage(pdfPieChart, 0, 0);
+
+                        // Convert canvas to image
+                        const PieChartImg = canvas.toDataURL('image/jpeg', 1.0);
+
+                        // Create a new PDF
+                        let pdf = new jsPDF();
+                        pdf.setFontSize(20);
+                        pdf.addImage(PieChartImg, 'JPEG', 10, 10, 190, 150);
+                        pdf.save('VaccineStats.pdf');
+                    }
+
+
+                    function downloadPieImage(format) {
+                        const canvas = document.getElementById('PieChart');
+                        const imgPieData = canvas.toDataURL(format, 1.0);
+                        const link = document.createElement('a');
+                        link.href = imgPieData;
+                        link.download = `chart.${format.split('/')[1]}`;
+                        link.click();
+                    }
+
                 </script>
 
 

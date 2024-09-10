@@ -71,6 +71,10 @@
                         <span class="material-symbols-outlined">space_dashboard</span>
                         <h3>Dashboard</h3>
                     </a>
+                    <a href="Users.php">
+                        <span class="material-symbols-outlined">account_circle</span>
+                        <h3>Users</h3>
+                    </a>
                     <a href="Reports.php">
                         <span class="material-symbols-outlined">lab_profile</span>
                         <h3>Reports</h3>
@@ -299,6 +303,6 @@
 
             <!------------------------------------------------------------------------------------------------------> 
         </div>
-        <script src="Theme.js"></script>
+        
     </body>
 </html>

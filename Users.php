@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="_allStyle.css">
+        <link rel="stylesheet" href="_dash.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <title>ADMIN || RHU Q-NNECT</title>
     </head>
@@ -35,7 +36,7 @@
                     setInterval(updateDateTime, 1000);
             </script>
 
-            <div class="wrap">
+                <div class="wrap">
                     <div class="search">
                         <form action="" method="POST">
                             <input type="text" class="searchTerm" name="searched"">
@@ -70,15 +71,16 @@
                         <span class="material-symbols-outlined">space_dashboard</span>
                         <h3>Dashboard</h3>
                     </a>
-                    <a href="Users.php">
+                    <a href="Users.php" class="active">
                         <span class="material-symbols-outlined">account_circle</span>
                         <h3>Users</h3>
                     </a>
-                    <a href="reports.php">
+                    <a href="Reports.php">
                         <span class="material-symbols-outlined">lab_profile</span>
                         <h3>Reports</h3>
                     </a>
-                    <a href="Settings.php"  class="active">
+
+                    <a href="Settings.php">
                         <span class="material-symbols-outlined">settings</span>
                         <h3>Settings</h3>
                     </a>
@@ -91,12 +93,6 @@
                     
                 </div>
             </aside>
-            <!-------------------------------MAIN CONTENT HERE...---------------------------------------->
-            <main>
-            
-            </main>
-            <!------------------------------------------------------------------------------------------------------> 
         </div>
-        <script src="Theme.js"></script>
     </body>
 </html>
