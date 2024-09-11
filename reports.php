@@ -8,6 +8,7 @@
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <title>ADMIN || RHU Q-NNECT</title>
@@ -337,10 +338,19 @@
                                             size: 16 // Change this value to adjust label size
                                         }
                                     }
+                                },
+                                datalabels: {
+                                    color: '#fff', // Set the text color
+                                    font: {
+                                        size: 16 // Set the font size for the data labels
+                                    },
+                                    formatter: (value) => value // Display the data value
                                 }
                             }
-                        }
+                        },
+                        plugins: [ChartDataLabels]
                     });
+ 
                     function downloadPiePDF() {
                         const pdfPieChart = document.getElementById('PieChart');
                         const canvas = document.createElement('canvas');
