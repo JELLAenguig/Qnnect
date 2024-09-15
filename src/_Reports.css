@@ -22,7 +22,7 @@ main{
     display: flex;
 }
 .served-body{
-    width: 60%;
+    width: 58%;
     height: 35rem !important;
     background-color: var(--pad-background);
     padding: 10px;
@@ -155,25 +155,12 @@ canvas {
     background-color: rgba(5, 52, 36, 0.14);
 }
 /*---------------------------------------*/
-.PieBox{
-    padding: 10px;
-    width: 40%;
-    height: 35rem !important;
-    background-color: var(--pad-background);
-    box-shadow: var(--pad-box-shadow);
-    border-radius: var(--box-borderRadius);
-}
-#PieChart{
-    height: 92% !important;
-}
 /*---------------------------------------*/
 @media screen and (max-width: 1768px){
     .cases{
         width: 40%;
     }
-    .PieBox{
-        width: 38%;
-    }
+    
 }
 @media screen and (max-width: 768px){
     .cases{
@@ -194,7 +181,5 @@ canvas {
     .cases .table ul li{
         height: 2.8vh;
     }
-    .PieBox{
-        width: 40%;
-    }
+    
 }

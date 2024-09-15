@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="_allStyle.css">
-        <link rel="stylesheet" href="_ReportsPage_.css">
+        <link rel="stylesheet" href="_Reports.css">
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
@@ -12,8 +12,9 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <title>ADMIN || RHU Q-NNECT</title>
+        
     </head>
-    <body>
+    <body >
         <div class="topNav">
             <div class="date">
                 <p class="current-time" id="current-time"></p>
@@ -112,17 +113,7 @@
                             <button onclick="downloadImage('image/jpeg')">JPEG</button>
                         </div>
                     </div>
-                    <div class="PieBox">
-                        <canvas id="PieChart"></canvas>
-                        <div class="print-btn">
-                            <button onclick="downloadPiePDF()">PDF</button>
-                            <button onclick="downloadPieImage('image/png')">PNG</button>
-                            <button onclick="downloadPieImage('image/jpeg')">JPEG</button>
-                        </div>
-                    </div>
-                    
-                <div class="SecChart">
-                <div class="cases">
+                    <div class="cases">
                         <h3>Total of Animal Bite Cases</h3>
                         <div class="box-pad">
                             <div class="table">
@@ -208,6 +199,8 @@
                         </div>
                     </div>
                 </div>
+                    
+                <div class="SecChart">
                     
                 </div>
                 <div class="space"></div>
@@ -313,79 +306,7 @@
                         link.click();
                     }
                     
-                    // Pie chart
-                    const pieCtx = document.getElementById('PieChart').getContext('2d');
-                    new Chart(pieCtx, {
-                        type: 'pie',
-                        data: {
-                            labels: ['First Vaccine', 'Booster'],
-                            datasets: [{
-                                label: 'Service Distribution',
-                                data: [1500, 300], // Sample data
-                                backgroundColor: [
-                                    'rgb(32, 178, 170)',
-                                    'rgb(215, 183, 36)'
-                                ],
-                                hoverOffset: 4
-                            }]
-                        },
-                        options: {
-                            responsive: true,
-                            plugins: {
-                                legend: {
-                                    labels: {
-                                        font: {
-                                            size: 16 // Change this value to adjust label size
-                                        }
-                                    }
-                                },
-                                datalabels: {
-                                    color: '#fff', // Set the text color
-                                    font: {
-                                        size: 16 // Set the font size for the data labels
-                                    },
-                                    formatter: (value) => value // Display the data value
-                                }
-                            }
-                        },
-                        plugins: [ChartDataLabels]
-                    });
- 
-                    function downloadPiePDF() {
-                        const pdfPieChart = document.getElementById('PieChart');
-                        const canvas = document.createElement('canvas');
-                        const ctx = canvas.getContext('2d');
-
-                        // Set canvas dimensions to match the PieChart dimensions
-                        canvas.width = pdfPieChart.width;
-                        canvas.height = pdfPieChart.height;
-
-                        // Fill the canvas background with white
-                        ctx.fillStyle = 'white';
-                        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-                        // Draw the PieChart on top of the white background
-                        ctx.drawImage(pdfPieChart, 0, 0);
-
-                        // Convert canvas to image
-                        const PieChartImg = canvas.toDataURL('image/jpeg', 1.0);
-
-                        // Create a new PDF
-                        let pdf = new jsPDF();
-                        pdf.setFontSize(20);
-                        pdf.addImage(PieChartImg, 'JPEG', 10, 10, 190, 150);
-                        pdf.save('VaccineStats.pdf');
-                    }
-
-
-                    function downloadPieImage(format) {
-                        const canvas = document.getElementById('PieChart');
-                        const imgPieData = canvas.toDataURL(format, 1.0);
-                        const link = document.createElement('a');
-                        link.href = imgPieData;
-                        link.download = `chart.${format.split('/')[1]}`;
-                        link.click();
-                    }
+                    
 
                 </script>
 

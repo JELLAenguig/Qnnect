@@ -4,9 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="_allStyle.css">
-        <link rel="stylesheet" href="-user.css">
+        <link rel="stylesheet" href="_user.css">
+        <link rel="stylesheet" href="./output.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         <title>ADMIN || RHU Q-NNECT</title>
     </head>
     <body>
@@ -14,6 +15,7 @@
             <div class="date">
                 <p class="current-time" id="current-time"></p>
                 <p class="current-date" id="current-date"></p> 
+                
             </div>
             <script>
                 function updateDateTime() {
@@ -87,7 +89,7 @@
         <main>
             <div class="list-container">
                 <div class="top-display">
-                    <h3><i class="fa fa-users" aria-hidden="true"></i>User List</h3>
+                    <h3 class="font-semibold"><i class="fa fa-users" aria-hidden="true"></i>User List</h3>
                     <div class="find">
                         <div class="findUser">
                             <form action="" method="POST">
@@ -143,7 +145,7 @@
                                 <td>Email Address</td>
                                 <td>Status</td>
                                 <td>Created</td>
-                                <td>Action</td>
+                                <td>Actions</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -155,10 +157,27 @@
                                 <td>Active</td>
                                 <td>2024-09-11</td>
                                 <td>
-                                    <button class="action-btn">View</button>
-                                    <button class="action-btn"><i class="fa-solid fa-pencil-alt"></i></button>
-                                    <button class="action-btn"><i class="fa-solid fa-trash"></i></button>
-                                    <button class="action-btn">Disable</button>
+                                    <!-- View Button -->
+                                    <button class="action-btn px-1 font-medium view bg-gray-100 text-gray-800 hover:bg-gray-200">
+                                    View
+                                    </button>
+
+                                    <!-- Edit (Pencil) Button -->
+                                    <button class="action-btn px-1 font-medium bg-gray-100 text-gray-800 hover:bg-gray-200">
+                                    <i class="fa-solid fa-pen"></i>
+                                    </i>
+                                    </button>
+
+                                    <!-- Trash (Delete) Button -->
+                                    <button class="action-btn px-1 font-medium trash bg-gray-100 text-gray-800 hover:bg-gray-200">
+                                    <i class="fa-solid fa-trash"></i>
+                                    </button>
+
+                                    <!-- Disable Button with custom background -->
+                                    <button class="bg-cyan-500 hover:bg-cyan-600 px-1 font-medium action-btn text-white">
+                                    Disable
+                                    </button>
+
                                 </td>
                             </tr>
                         </tbody>
