@@ -22,7 +22,7 @@ main{
     display: flex;
 }
 .served-body{
-    width: 58%;
+    width: 68%;
     height: 35rem !important;
     background-color: var(--pad-background);
     padding: 10px;
@@ -36,40 +36,24 @@ main{
     padding: 3px;
     width: 100%;
 }
-.year-option{
-    width: 100%;
+.year-selection{
     padding: 3px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
     background-color: var(--pad-background);
     box-shadow: var(--pad-box-shadow);
-    text-align: center;
     border-radius: var(--box-borderRadius);
     margin-bottom: 0.9rem;
-    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+.year-selection select{
     font-weight: 500;
-}
-.print-btn{
-    padding: 0 10px;
-    display: flex;
-    gap: 1rem;
-}
-.print-btn button{
-    margin-top: 0.5rem;
-    padding: 5px;
-    border: none;
-    background-color: #dddddd60;
-    box-shadow: 1px 1px 1px #4c4c4c68;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
     cursor: pointer;
-    transition: all 300ms ease;
-}
-.print-btn button:hover{
-    box-shadow: none;
-    background-color: rgba(16, 71, 53, 0.092);
 }
 canvas {
     width: 100% !important;
-    height: 52vh !important;
+    height: 76% !important;
 }
 /*---------------------------------------*/
 .cases{
@@ -77,7 +61,7 @@ canvas {
     box-shadow: var(--pad-box-shadow);
     border-radius: var(--box-borderRadius);
     padding: 0.5%;
-    height: 35rem !important;
+    height: 37rem !important;
 }
 .box-pad{
     display: flex;
@@ -98,21 +82,23 @@ canvas {
     color: var(--font-color-white);
     font-weight: 500;
 }
-.year1 h4, .year2 h4 {
+.optionyear{
+    width: 100%;
+}
+.year1 select, .year2 select {
     position: relative;
     cursor: pointer;
+    padding: 5px;
+    font-weight: 500;
+    font-size: 15px;
+    text-align: center;
+    width: 100%;
+    background: var(--color-header);
+    color: var(--font-color-white);
 }
-
-.year1 h4 i, .year2 h4 i {
-    position: absolute;
-    right: 0.5rem;
-    top: 30%;
-    transform: translateY(-50%);
-}
-
 .cases .table{
     width: 100%;
-    height: 100%;
+    height: 70%;
     gap: 0.5rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -131,7 +117,7 @@ canvas {
     display: flex;
     justify-content: center;
     flex-grow: 1;
-    height: 3.5vh;
+    height: 3.3vh;
     width: 100%;
     background-color: #5e9c96;
     color: var(--font-color-white);
@@ -139,9 +125,10 @@ canvas {
 .cases .table ul li{
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
-    height: 3.5vh;
+    height: 3.3vh;
     width: 100%;
-    background-color: aliceblue;
+    border: 0.5px solid var(--color-header);
+    border-radius: var(--box-borderRadius)
 }
 .total{
     margin-top: 0.5rem;
@@ -155,6 +142,77 @@ canvas {
     background-color: rgba(5, 52, 36, 0.14);
 }
 /*---------------------------------------*/
+.casesPerService{
+    width: 30%;
+    height: 35rem;
+    background-color: var(--pad-background);
+    padding: 6px;
+    box-shadow: var(--pad-box-shadow);
+    border-radius: var(--box-borderRadius);
+}
+.casesPerService h3{
+    padding: 5px;
+    color: var(--color-primary);
+    border-bottom: 1px solid var(--color-primary);
+    text-align: center;
+}
+.filter-month{
+    box-shadow: var(--pad-box-shadow);
+    border-radius: var(--box-borderRadius);
+}
+.filter-month select{
+    padding: 5px;
+    font-family: 'Poppins';
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+    border-radius: var(--box-borderRadius);
+    cursor: pointer;
+}
+.permonth-table{
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+    height: 75%;
+    justify-content: center;
+}
+.permonth-table ul{
+    width: 49%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.permonth-table ul h3{
+    color: var(--font-color-white);
+    background-color: var(--color-header);
+    font-weight: 500;
+    border-radius: var(--box-borderRadius);
+    border: none;
+}
+.permonth-table ul li{
+    text-align: center;
+    padding: 18px 0;
+    font-size: 14px;
+    background: rgb(240 253 250);
+    font-weight: 5600;
+}
+/*---------------------------------------*/
+.download-btn{
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    font-weight: 500;
+    height: 2rem;
+    padding: 0 10px;
+}
+.download-btn select{
+    cursor: pointer;
+    padding: 5px 20px;
+    box-shadow: var(--pad-box-shadow);
+    border-radius: var(--box-borderRadius);
+}
 /*---------------------------------------*/
 @media screen and (max-width: 1768px){
     .cases{

@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="_allStyle.css">
-        <link rel="stylesheet" href="_Reports.css">
+        <link rel="stylesheet" href="_1report.css">
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
@@ -100,20 +100,169 @@
             </aside>
             <!-------------------------------MAIN CONTENT HERE...---------------------------------------->
             <main>
-                <div class="report-box">
-                    <div class="served-body">
-                        <h3>Patient Served</h3>
-                        <div class="year-option">
-                            2024
+            <div class="report-box">
+                <div class="served-body">
+                    <h3>Patient Served</h3>
+                    <div class="year-selection">
+                        <select id="yearDropdownPrimary">
+                            <!-- Options will be dynamically generated -->
+                        </select>
+                    </div>
+
+                    <canvas id="MonthlyChart"></canvas>
+                    <div class="download-btn">
+                        <label for="download-option"><i class="fa-solid fa-download"></i> Download: </label>
+                        <select id="download-option" onchange="handleDownload(this.value)">
+                            <option value="" disabled selected>Select format...</option>
+                            <option value="PDF">PDF</option>
+                            <option value="PNG">PNG</option>
+                            <option value="JPEG">JPEG</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="casesPerService">
+                    <h3>Number of Patients Per Services</h3>
+                    <div class="filter-month">
+                        <select id="Month" name="Month">
+                            <option value="January">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                        </select>
+                    </div>
+                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                    <script>
+                        $(document).ready(function() {
+                            const initialYearPrimary = 2024;
+                            const finalYearPrimary = 5000;
+
+                            function populateYearDropdownPrimary() {
+                                const $dropdownPrimary = $('#yearDropdownPrimary');
+                                
+                                // Clear existing options
+                                $dropdownPrimary.empty();
+
+                                for (let year = initialYearPrimary; year <= finalYearPrimary; year++) {
+                                    $dropdownPrimary.append($('<option>', {
+                                        value: year,
+                                        text: year
+                                    }));
+                                }
+                            }
+
+                            function handleYearChangePrimary() {
+                                const selectedYearPrimary = $('#yearDropdownPrimary').val();
+                                console.log('Selected Year from Primary Dropdown:', selectedYearPrimary); // Handle the selected year
+                            }
+
+                            // Initialize the first dropdown with years
+                            populateYearDropdownPrimary();
+
+                            // Bind the change event to the dropdown
+                            $('#yearDropdownPrimary').change(handleYearChangePrimary);
+                        });
+
+                        $(document).ready(function() {
+                            const initialYear1 = 2024;
+                            const finalYear1 = 5000;
+
+                            function populateYearDropdown1() {
+                                const $dropdown1 = $('#year1');
+                                
+                                // Clear existing options
+                                $dropdown1.empty();
+
+                                for (let year = initialYear1; year <= finalYear1; year++) {
+                                    $dropdown1.append($('<option>', {
+                                        value: year,
+                                        text: year
+                                    }));
+                                }
+                            }
+
+                            function handleYearChange1() {
+                                const selectedYear1 = $('#year1').val();
+                                console.log('Selected Year from Dropdown 1:', selectedYear1); // Handle the selected year
+                            }
+
+                            // Initialize the first dropdown with years
+                            populateYearDropdown1();
+
+                            // Bind the change event to the dropdown
+                            $('#year1').change(handleYearChange1);
+                        });
+
+                        $(document).ready(function() {
+                            const initialYear2 = 2025;
+                            const finalYear2 = 5000;
+
+                            function populateYearDropdown2() {
+                                const $dropdown2 = $('#year2');
+                                
+                                // Clear existing options
+                                $dropdown2.empty();
+
+                                for (let year = initialYear2; year <= finalYear2; year++) {
+                                    $dropdown2.append($('<option>', {
+                                        value: year,
+                                        text: year
+                                    }));
+                                }
+                            }
+
+                            function handleYearChange2() {
+                                const selectedYear2 = $('#year2').val();
+                                console.log('Selected Year from Dropdown 2:', selectedYear2); // Handle the selected year
+                            }
+
+                            // Initialize the first dropdown with years
+                            populateYearDropdown2();
+
+                            // Bind the change event to the dropdown
+                            $('#year2').change(handleYearChange2);
+                        });
+                    </script>
+                        <div class="permonth-table">
+                            <ul class="Service_perMonth">
+                                <h3>Services</h3>
+                                <li>Consultation</li>
+                                <li>Laboratory</li>
+                                <li>X-Ray</li>
+                                <li>ECG</li>
+                                <li>Ultrasound</li>
+                            </ul>
+                            <ul class="total_perMonth">
+                                <h3>Total No.</h3>
+                                <li>000</li>
+                                <li>000</li>
+                                <li>000</li>
+                                <li>000</li>
+                                <li>000</li>
+                            </ul>
                         </div>
-                        <canvas id="MonthlyChart"></canvas>
-                        <div class="print-btn">
-                            <button onclick="downloadPDF()">PDF</button>
-                            <button onclick="downloadImage('image/png')">PNG</button>
-                            <button onclick="downloadImage('image/jpeg')">JPEG</button>
+                        <div class="download-btn">
+                            <label for="download-option"><i class="fa-solid fa-download"></i> Download: </label>
+                            <select name="download-option" id="download-option">
+                                <option value="" disabled selected>Select format...</option>
+                                <option value="PDF">PDF</option>
+                                <option value="PNG">PNG</option>
+                                <option value="JPEG">JPEG</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="cases">
+                    
+                </div>
+                    
+                <div class="SecChart">
+                <div class="cases">
                         <h3>Total of Animal Bite Cases</h3>
                         <div class="box-pad">
                             <div class="table">
@@ -136,7 +285,12 @@
                                 </div>
 
                                 <div class="year1">
-                                    <h4>2023 <i class="fa fa-sort-desc" aria-hidden="true"></i></h4>
+                                    <div class="optionyear">
+                                        <select id="year1" onchange="handleYearChange1()">
+                                            <!-- Options will be dynamically generated -->
+                                        </select> 
+                                    </div>
+                                    
                                     <ul>
                                         <li>500</li>
                                         <li>504</li>
@@ -153,7 +307,11 @@
                                     </ul>
                                 </div>
                                 <div class="year2">
-                                    <h4>2024 <i class="fa fa-sort-desc" aria-hidden="true"></i></h4>
+                                    <div class="optionyear">
+                                        <select id="year2" onchange="handleYearChange2()">
+                                            <!-- Options will be dynamically generated -->
+                                        </select> 
+                                    </div>
                                     <ul>
                                         <li>500</li>
                                         <li>504</li>
@@ -197,14 +355,35 @@
                                 <li>3,630</li>
                             </ul>
                         </div>
+                        <div class="download-btn">
+                            <label for="download-option"><i class="fa-solid fa-download"></i> Download: </label>
+                                <select id="download-option">
+                                <option value="" disabled selected>Select format...</option>    
+                                <option value="PDF">PDF</option>
+                                <option value="PNG">PNG</option>
+                                <option value="JPEG">JPEG</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
-                    
-                <div class="SecChart">
-                    
                 </div>
                 <div class="space"></div>
                 <script>
+                    // Function to generate year options for dropdowns
+                    function populateYearDropdowns() {
+                        const yearDropdowns = [document.getElementById('yearDropdownPrimary'), document.getElementById('year1'), document.getElementById('year2')];
+                        const currentYear = new Date().getFullYear();
+                        const endYear = currentYear - 5;
+                        
+                        for (let i = currentYear; i >= endYear; i--) {
+                            yearDropdowns.forEach(dropdown => {
+                                const option = document.createElement('option');
+                                option.value = i;
+                                option.textContent = i;
+                                dropdown.appendChild(option);
+                            });
+                        }
+                    }
+
                     const ctx = document.getElementById('MonthlyChart').getContext('2d');
                     
                     const bgColor = {
@@ -218,7 +397,7 @@
                     }
 
                     new Chart(ctx, {
-                        type: 'line',
+                        type: 'bar',
                         data: {
                             labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
                             datasets: [
@@ -283,37 +462,54 @@
                     });
                     
                     
-                    function downloadPDF(){
+                    function handleDownload() {
+                        const downloadOption = document.getElementById('download-option');
+                        const format = downloadOption.value;
+
+                        // Trigger the appropriate download
+                        initiateDownload(format);
+
+                        // Reset the dropdown to an empty value (or a default value)
+                        downloadOption.selectedIndex = 0;  // Reset to the first option (if you have a placeholder)
+                    }
+
+                    function initiateDownload(format) {
+                        if (format === 'PDF') {
+                            downloadPDF();
+                        } else if (format === 'PNG') {
+                            downloadImage('image/png');
+                        } else if (format === 'JPEG') {
+                            downloadImage('image/jpeg');
+                        }
+                    }
+
+                    function downloadPDF() {
                         const pdfChart = document.getElementById('MonthlyChart');
-                        //create image
                         const MonthlyChartImg = pdfChart.toDataURL('image/jpeg', 1.0);
-                        console.log(MonthlyChartImg);
 
                         let pdf = new jsPDF();
                         pdf.setFontSize(20);
                         pdf.addImage(MonthlyChartImg, 'JPEG', 10, 10, 190, 150);
                         pdf.save('MontlyStats.pdf');
                     }
+
                     function downloadImage(format) {
                         const canvas = document.getElementById('MonthlyChart');
-                        // Convert canvas to image data with high quality
-                        const imgData = canvas.toDataURL(format, 1.0); // Quality set to 1.0 for high resolution
+                        const imgData = canvas.toDataURL(format, 1.0);
 
-                        // Create a temporary link element to trigger the download
                         const link = document.createElement('a');
                         link.href = imgData;
                         link.download = `chart.${format.split('/')[1]}`;
                         link.click();
                     }
                     
-                    
-
                 </script>
 
 
             </main>
             <!------------------------------------------------------------------------------------------------------> 
         </div>
-        
+     
+    <script src="yearTotal.js"></script>
     </body>
 </html>
