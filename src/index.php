@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="__01index.css">
-    <link rel="stylesheet" href="__alertBox.css">
+    <link rel="stylesheet" href="__02index.css">
+    <link rel="stylesheet" href="_PopUps.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Mariveles || RHU Q-nnect</title>
 </head>
@@ -23,6 +23,15 @@
             <p>You cannot choose this service without a doctor's request. Please select 'Consultation'</p>
             <p>(Hindi mo maaaring piliin ang serbisyong ito kung walang request mula sa doktor. Mangyaring piliin ang 'Consultation')</p>
             <button id="OK">OK</button>
+        </div>
+    </div>
+    <div class="selectApplicable">
+        <div class="op-card">
+            <p>Please select what is applicable to you.</p>
+            <button id="pwd">PWD</button>
+            <button id="Senior">Senior Citizen</button>
+            <button id="Pregnant">Pregnant</button>
+            <button id="None">None of the above</button>
         </div>
     </div>
     <div class="title">
@@ -64,6 +73,6 @@
         </div>
     </div>
 
-    <script src="DocRequests.js"></script>
+    <script src="Requests.js"></script>
 </body>
 </html>

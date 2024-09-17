@@ -5,9 +5,11 @@ include "DB.php"; // Include your database connection script
 $nextQueueNumber = '';
 $service = '';
 $now = '';
+$priority = '';
 $patientsAhead = 0;
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['service'])) {
     $service = $_POST['service'];
+    $priority = $_POST['priorType'];
 
     // Function to generate a queue number
     function generateQueueNumber($lastNumber, $prefix) {
@@ -152,7 +154,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['service'])) {
                     data: {
                         ticketNum: '<?php echo $nextQueueNumber; ?>',
                         service: '<?php echo $service; ?>',
-                        dateStamp: '<?php echo $dateStamp; ?>'
+                        dateStamp: '<?php echo $dateStamp; ?>',
+                        prioritization: '<?php echo $priority; ?>'
                     },
                     success: function(response) {
                         window.location.href = 'index.php';

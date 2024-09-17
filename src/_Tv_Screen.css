@@ -174,7 +174,7 @@ main{
     color: #093161;
 }
 .col ul li {
-    height: 10vh;
+    height: 10.1vh;
     background-color: #eeffff38;
     box-shadow: 1px 2px 2px #00132246;
     font-weight: 600;
@@ -211,7 +211,7 @@ main{
 } 
 .vid{
     width: 100%;
-    height: 70%;
+    height: 65vh !important;
     background-color: rgb(31, 31, 31);
 }
 .vid video {
@@ -221,14 +221,27 @@ main{
 }
 
 .additional{
+    padding: 5px 10px;
     width: 100%;
-    height: 8%;
-    background-color: #feffff0d;
+    height: 10.8vh !important;
+    background-color: #fefdff;
     box-shadow: var(--pad-box-shadow);
-    display: flex;
-   
+    display: flex; 
+    flex-direction: column;
 }
-
+.additional h3{
+    width: 100%;
+    color: var(--color-primary);
+    font-size: 2.5vh;
+}
+.additional ul{
+    display: flex;
+    gap: 1rem;
+}
+.additional ul li{
+    font-size: 3vh;
+    font-weight: 600;
+}
 .btm{
     position: fixed; 
     bottom: 0; 

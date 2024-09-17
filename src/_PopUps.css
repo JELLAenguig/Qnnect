@@ -1,5 +1,6 @@
 .alert-container,
-.consultPopUp{
+.consultPopUp,
+.selectApplicable{
     z-index: 5;
     width: 100%;
     height: 100%;
@@ -86,4 +87,25 @@
     cursor: pointer;
 }
 /*---------------------------------------*/
-
+.op-card{
+    width: 700px;
+    height: 330px;
+    background-color: #ffffff7e;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 1.5px 2px #0303036e;
+    border-radius: 5px;
+    backdrop-filter: blur(20px);
+    border: 1px solid #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+.op-card button{
+    margin-top: 20px;
+    padding: 7px;
+    background-color: rgb(12, 159, 105);
+    color: rgb(255, 255, 255);
+    font-family: 'Poppins', sans-serif;
+    font-size: 19px;
+    cursor: pointer;
+}

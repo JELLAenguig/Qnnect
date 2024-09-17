@@ -22,7 +22,7 @@ function populateYearDropdown1() {
 function handleYearChange1() {
     const yearDropdown1 = document.getElementById('year1');
     const selectedYear = yearDropdown1.value;
-    console.log('Selected Year from Dropdown 1:', selectedYear); // Do something with the selected year
+    
 }
 
 // Define initial and final years for dropdown 2
@@ -49,7 +49,7 @@ function populateYearDropdown2() {
 function handleYearChange2() {
     const yearDropdown2 = document.getElementById('year2');
     const selectedYear = yearDropdown2.value;
-    console.log('Selected Year from Dropdown 2:', selectedYear); // Do something with the selected year
+    
 }
 
 // Initialize both dropdowns with years when the page loads

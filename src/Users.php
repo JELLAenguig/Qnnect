@@ -4,10 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="_allStyle.css">
-        <link rel="stylesheet" href="_user.css">
+        <link rel="stylesheet" href="_users.css">
         <link rel="stylesheet" href="./output.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <title>ADMIN || RHU Q-NNECT</title>
     </head>
     <body>
@@ -104,8 +105,10 @@
                     <button class="btn add-user"><i class="fa-solid fa-user-plus"></i> Add User</button>
                 </div>
                 <div class="filter">
+                    <span class="font-medium filter-show"><i class="fa-solid fa-sliders"></i> Filter</span>
+                    
                     <form id="filterForm" method="POST">
-                        <!-- User Role Filter -->
+                           <!-- User Role Filter -->
                         <div class="filter-group">
                             <label for="userRole">User Role:</label>
                             <select id="userRole" name="userRole">
@@ -132,7 +135,7 @@
                         </div>
 
                         <!-- Filter Button -->
-                        <button type="submit" class="btn apply-filter">Apply Filters</button>
+                        <button type="submit" class="btn apply-filter font-medium">Apply</button>
                     </form>
                 </div>
                 <div class="table-box">
@@ -158,25 +161,20 @@
                                 <td>2024-09-11</td>
                                 <td>
                                     <!-- View Button -->
-                                    <button class="action-btn px-1 font-medium view bg-gray-100 text-gray-800 hover:bg-gray-200">
-                                    View
-                                    </button>
+                                    <button class="action-btn px-1 font-medium view bg-gray-100 text-gray-800 viewbtn">View</button>
 
                                     <!-- Edit (Pencil) Button -->
-                                    <button class="action-btn px-1 font-medium bg-gray-100 text-gray-800 hover:bg-gray-200">
+                                    <button class="action-btn px-1 font-medium bg-gray-100 text-gray-800 editbtn">
                                     <i class="fa-solid fa-pen"></i>
-                                    </i>
                                     </button>
 
                                     <!-- Trash (Delete) Button -->
-                                    <button class="action-btn px-1 font-medium trash bg-gray-100 text-gray-800 hover:bg-gray-200">
+                                    <button class="action-btn px-1 font-medium trash bg-gray-100 text-gray-800 delbtn">
                                     <i class="fa-solid fa-trash"></i>
                                     </button>
 
                                     <!-- Disable Button with custom background -->
-                                    <button class="bg-cyan-500 hover:bg-cyan-600 px-1 font-medium action-btn text-white">
-                                    Disable
-                                    </button>
+                                    <button class="px-1 font-medium action-btn disbtn">Disable</button>
 
                                 </td>
                             </tr>
@@ -187,5 +185,6 @@
         </main>
         <!------------------------------------------------------------------------------------------------------>     
         </div>
+        <script src="filter-show.js"></script>
     </body>
 </html>

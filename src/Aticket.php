@@ -6,6 +6,7 @@ $GenService = '';
 $nextQueueNumber = '';
 $service = '';
 $now = '';
+$priority = '';
 $patientsAhead = 0;
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['service'])) {
     $service = $_POST['service'];

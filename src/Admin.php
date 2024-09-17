@@ -4,11 +4,39 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="_allStyle.css">
-        <link rel="stylesheet" href="_dash.css">
+        <link rel="stylesheet" href="_1dashboard.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <title>ADMIN || RHU Q-NNECT</title>
     </head>
     <body>
+        <div class="skipPopUp">
+            <div class="PopOut">
+                <div class="card">
+                    <i class="fa-regular fa-circle-xmark" id="exit"></i>
+                    <h3>Skipped Requests</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Service</td>
+                                <td>Queue Number</td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Consultation</td>
+                                <td>A002</td>
+                                <td>
+                                    <button id="delskip"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
         <div class="topNav">
             <div class="date">
                 <p class="current-time" id="current-time"></p>
@@ -39,7 +67,7 @@
                 <div class="wrap">
                     <div class="search">
                         <form action="" method="POST">
-                            <input type="text" class="searchTerm" name="searched"">
+                            <input type="text" class="searchTerm" name="searched">
                             <button type="submit" class="searchButton">
                                 <span class="material-symbols-outlined">search</span>
                             </button>
@@ -280,7 +308,41 @@
                     
                 </div>
                 <div class="overview">
-                    <h2>Overview of Patient Queue</h2>
+                    <div class="table-top">
+                        <h2>Overview of Patient Queue</h2>
+                        <div class="filter">
+                            <form id="filterForm" method="POST">
+                                <!-- User Role Filter -->
+                                <div class="filter-group">
+                                    <label for="servicename">Service:</label>
+                                    <select id="servicename" name="servicename">
+                                        <option value="All">All</option>
+                                        <option value="Consultation">Consultation</option>
+                                        <option value="Laboratory">Laboratory</option>
+                                        <option value="ECG">ECG</option>
+                                        <option value="Ultrasound">Ultrasound</option>
+                                        <option value="AnimalBite">Animal Bite</option>
+                                    </select>
+                                </div>
+
+                                <!-- Account Status Filter -->
+                                <div class="filter-group">
+                                    <label for="Status">Status:</label>
+                                    <select id="Status" name="Status">
+                                        <option value="">All</option>
+                                        <option value="served">Served</option>
+                                        <option value="serving">Serving</option>
+                                        <option value="pending">Pending</option>
+                                    </select>
+                                </div>
+
+                                <!-- Filter Button -->
+                                <button type="submit" class="btn apply-filter font-medium">Apply</button>
+                            </form>
+                        </div>
+                        <span class="font-medium filter-show"><i class="fa-solid fa-sliders"></i> Filter</span>
+                    </div>
+                    
                     <div class="table-cont">
                     <table>
                         <thead>
@@ -303,6 +365,7 @@
 
             <!------------------------------------------------------------------------------------------------------> 
         </div>
-        
+        <script src="skipped.js"></script>
+        <script src="filter-show.js"></script>
     </body>
 </html>
