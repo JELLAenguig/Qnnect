@@ -38,42 +38,85 @@
 .top-display .btn:hover{
     box-shadow: none;
 }
-/* Search form styling */
+/* ------------SEARCH BAR------------- */
 .find {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+/* Search form */
+.search-form {
+    border-radius: var(--box-borderRadius);
+    padding: 0 0.5rem; 
+    font-size: 14px; 
+    transition: all 0.3s ease-in-out; 
+    width: 20rem; 
+    height: 21px;
+}
+
+/* Input group */
+.input-group {
+    display: flex;
+    width: 100%;
+}
+
+.input-group-btn {
+    height: 21px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid var(--color-primary);
+    width: 40px; /* Consistent width for button */
+    transition: all 0.3s ease-in-out;
+}
+/* Search input */
+#search{
+    border-radius: var(--box-borderRadius) 0 0 var(--box-borderRadius); /* Round left side */
+    background-color: #fff;
+    color: #333;
+    box-shadow: var(--pad-box-shadow);
+    padding: 0.5rem;
 }
 
-.findUser form {
+/* Search button */
+.search-btn {
     display: flex;
-    width: 100%;
-    
-}
-
-.findUser form .Find {
-    width: 25rem;
-    padding: 0px 10px;
-    outline: none;
-    color: #000;
-    font-size: 14px;
-    transition: all 0.3s ease;
-}
-/* Search button styling */
-.FindButton {
-    width: 40px;
-    height: 25px;
-    text-align: center;
-    cursor: pointer;
-    font-size: 14px;
-    transition: all 0.3s ease;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
     background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 var(--box-borderRadius) var(--box-borderRadius) 0; /* Round right side */
+    box-shadow: var(--pad-box-shadow);
+    color: #666;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth animation */
 }
 
-.FindButton span {
-    font-size: 20px;
-    color: #000000;
+/* Button hover state */
+.search-btn:hover {
+    background-color: #e2e8f0; /* Darker hover state */
+    transform: scale(1.02); /* Slight scale effect on hover */
+}
+
+/* Button active state */
+.search-btn:active {
+    transform: scale(0.90); /* Slight shrink on click */
+}
+
+/* Input hover and focus states */
+.search-form:hover,
+.search-form:focus {
+    border-color: #2762f3; /* Change border color on focus/hover */
+    box-shadow: 0 0 5px rgba(39, 98, 243, 0.4); /* Add shadow on focus */
+}
+
+/* Search icon inside button */
+.fa-search {
+    font-size: 13px;
+    color: #333;
 }
 /*----------------------*/
 .filter {
@@ -81,11 +124,6 @@
     display: flex;
     padding: 6px 15px;
     align-items: center;
-}
-.filter #filterForm{
-    display: none;
-    justify-content: center;
-    gap: 1rem;
 }
 .filter span{
     margin-right: 15vw;
@@ -99,35 +137,39 @@
     display: flex;
     gap: 1rem;
 }
-
+#filterForm{
+    display: none;
+    gap: 2rem;
+    justify-content: center;
+}
+.filter-group{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.filter-group select{
+    background: none;
+    width: 100%;
+    cursor: pointer;
+    padding: 10px;
+}
+.filter-group .filterbox{
+    display: flex;
+    align-items: center;
+    height: 1.5rem;
+    background: var(--pad-background);
+    box-shadow: var(--pad-box-shadow);
+    padding: 1px 5px;
+    border-radius: var(--box-borderRadius);
+}
+.filter-group .filterbox i{
+    z-index: 2;
+    height: 100%;
+}
 .filter-group label {
     font-size: 12.4px;
     font-weight: 500;
 }
-
-.filter-group select, .filter-group input {
-    padding: 0 3px; /* Adequate padding for usability */
-    height: 20px;
-    font-size: 12px; /* Readable font size */
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    width: 150px; /* Fixed width for consistency */
-}
-
-.btn.apply-filter {
-    background-color: rgb(241 245 249);
-    padding: 2px 10px;
-    border-radius: var(--box-borderRadius);
-    box-shadow: 0.2px 0.3px 0.2px rgb(214 211 209);
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Poppins';
-    font-size: 12px; /* Consistent font size */
-    align-self: center; /* Center the button vertically within the filter */
-}
-
 /*----------------------*/
 .list-container .table-box{
     width: 100%;

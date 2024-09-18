@@ -28,10 +28,10 @@
     <div class="selectApplicable">
         <div class="op-card">
             <p>Please select what is applicable to you.</p>
-            <button id="pwd">PWD</button>
+            <button id="PWD">PWD</button>
             <button id="Senior">Senior Citizen</button>
             <button id="Pregnant">Pregnant</button>
-            <button id="None">None of the above</button>
+            <button id="Regular">Regular</button>
         </div>
     </div>
     <div class="title">

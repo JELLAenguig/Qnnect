@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('.today-que').on('click', function(){
+    $('.today-skipped').on('click', function(){
         $('.PopOut').css({
             display: 'flex' // Show the alert container
         });

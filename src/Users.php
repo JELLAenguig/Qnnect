@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="_allStyle.css">
-        <link rel="stylesheet" href="_users.css">
+        <link rel="stylesheet" href="_1users.css">
         <link rel="stylesheet" href="./output.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -91,16 +91,21 @@
             <div class="list-container">
                 <div class="top-display">
                     <h3 class="font-semibold"><i class="fa fa-users" aria-hidden="true"></i>User List</h3>
-                    <div class="find">
-                        <div class="findUser">
-                            <form action="" method="POST">
-                                <input type="text" class="Find" name="Find">
-                                <button type="submit" class="FindButton">
-                                    <span class="material-symbols-outlined">search</span>
-                                </button>
+
+                        <div class="find">
+                            <div class="findUser">
+                            <form class='form-inline'>
+                                <div class="input-group">
+                                    <input type='text' id='search' class="search-form">
+                                    <span class="input-group-btn" style="width:39px">
+                                    <button id="search-this" type="submit" class="search-btn">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                    </span>
+                                </div>
                             </form>
+                            </div>
                         </div>
-                    </div>
 
                     <button class="btn add-user"><i class="fa-solid fa-user-plus"></i> Add User</button>
                 </div>
@@ -111,31 +116,35 @@
                            <!-- User Role Filter -->
                         <div class="filter-group">
                             <label for="userRole">User Role:</label>
-                            <select id="userRole" name="userRole">
-                                <option value="">All</option>
-                                <option value="admin">Admin</option>
-                                <option value="moderator">Moderator</option>
-                            </select>
+                                <div class="filterbox">
+                                    <select id="userRole" name="userRole">
+                                        <option value="">All</option>
+                                        <option value="admin">Admin</option>
+                                        <option value="moderator">Moderator</option>
+                                    </select>
+                                    <i class="fa-solid fa-sort-down"></i>
+                                </div>
                         </div>
-
                         <!-- Account Status Filter -->
                         <div class="filter-group">
                             <label for="accountStatus">Status:</label>
-                            <select id="accountStatus" name="accountStatus">
-                                <option value="">All</option>
-                                <option value="active">Active</option>
-                                <option value="inactive">Deactivated</option>
-                            </select>
+                            <div class="filterbox">
+                                <select id="accountStatus" name="accountStatus">
+                                    <option value="">All</option>
+                                    <option value="active">Active</option>
+                                    <option value="inactive">Deactivated</option>
+                                </select>
+                                <i class="fa-solid fa-sort-down"></i>
+                            </div>
                         </div>
 
                         <!-- Registration Date Filter -->
                         <div class="filter-group">
-                            <label for="registrationDate">Registered:</label>
-                            <input type="date" id="registrationDate" name="registrationDate">
+                            <label for="registrationDate">Date Registered:</label>
+                            <div class="filterbox">
+                                <input type="date" id="registrationDate" name="registrationDate">
+                            </div>
                         </div>
-
-                        <!-- Filter Button -->
-                        <button type="submit" class="btn apply-filter font-medium">Apply</button>
                     </form>
                 </div>
                 <div class="table-box">

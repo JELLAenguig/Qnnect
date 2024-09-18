@@ -1,5 +1,5 @@
 <?php
-include "DB.php"; // Ensure this file initializes the $conn variable
+include "DB.php"; 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Retrieve POST data

@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="_allStyle.css">
-        <link rel="stylesheet" href="_1dashboard.css">
+        <link rel="stylesheet" href="_3dashboard.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -67,7 +67,7 @@
                 <div class="wrap">
                     <div class="search">
                         <form action="" method="POST">
-                            <input type="text" class="searchTerm" name="searched">
+                            <input type="text" class="searchTerm" name="searched" placeholder="Search...">
                             <button type="submit" class="searchButton">
                                 <span class="material-symbols-outlined">search</span>
                             </button>
@@ -169,13 +169,13 @@
                                     <h1>000</h1>
                                 </div>
                             </div>
-                            <div class="today-que">
+                            <div class="today-request">
                                 <div class="box">
                                     <h2>Total Request</h2>
                                     <h1>000</h1>
                                 </div>
                             </div>
-                            <div class="today-que">
+                            <div class="today-skipped">
                                 <div class="box">
                                     <h2>Skipped Request</h2>
                                     <h1>000</h1>
@@ -253,27 +253,27 @@
                                                     }
                                                 },
                                                 titleFont: {
-                                                    family: 'Poppins',   // Font family for tooltip title
-                                                    size: 16,          // Font size for tooltip title
-                                                    weight: 'bold',    // Font weight for tooltip title
-                                                    style: 'normal'    // Font style for tooltip title
+                                                    family: 'Poppins',  
+                                                    size: 16,    
+                                                    weight: 'bold',    
+                                                    style: 'normal' 
                                                 },
                                                 bodyFont: {
-                                                    family: 'Poppins',   // Font family for tooltip body
-                                                    size: 14,          // Font size for tooltip body
-                                                    weight: 'normal',  // Font weight for tooltip body
-                                                    style: 'normal'    // Font style for tooltip body
+                                                    family: 'Poppins',   
+                                                    size: 14,          
+                                                    weight: 'normal',  
+                                                    style: 'normal'  
                                                 }
                                             },
                                             title: {
                                                 display: true,
                                                 text: 'Service Statistics',
                                                 font: {
-                                                    family: 'Poppins',   // Font family for title
-                                                    size: 15,          // Font size for title
-                                                    weight: '600',    // Font weight for title
+                                                    family: 'Poppins',   
+                                                    size: 15,          
+                                                    weight: '600',    
                                                     color: '#0d5389',
-                                                    style: 'normal'    // Font style for title
+                                                    style: 'normal'  
                                                 }
                                             }
                                         },
@@ -281,20 +281,20 @@
                                             x: {
                                                 ticks: {
                                                     font: {
-                                                        family: 'Arial',   // Font family for x-axis labels
-                                                        size: 12,          // Font size for x-axis labels
-                                                        weight: 'normal',  // Font weight for x-axis labels
-                                                        style: 'normal'    // Font style for x-axis labels
+                                                        family: 'Arial',  
+                                                        size: 12,         
+                                                        weight: 'normal',  
+                                                        style: 'normal' 
                                                     }
                                                 }
                                             },
                                             y: {
                                                 ticks: {
                                                     font: {
-                                                        family: 'Arial',   // Font family for y-axis labels
-                                                        size: 12,          // Font size for y-axis labels
-                                                        weight: 'normal',  // Font weight for y-axis labels
-                                                        style: 'normal'    // Font style for y-axis labels
+                                                        family: 'Arial',
+                                                        size: 12,        
+                                                        weight: 'normal',  
+                                                        style: 'normal'    
                                                     }
                                                 }
                                             }
@@ -310,51 +310,97 @@
                 <div class="overview">
                     <div class="table-top">
                         <h2>Overview of Patient Queue</h2>
-                        <div class="filter">
+
+                        <div class="find">
+                            <div class="findUser">
+                            <form class='form-inline'>
+                                <div class="input-group">
+                                    <input type='text' id='search' class="search-form" placeholder="Search...">
+                                    <span class="input-group-btn" style="width:39px">
+                                    <button id="search-this" type="submit" class="search-btn">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                    </span>
+                                </div>
+                            </form>
+                            </div>
+                        </div>
+                        
+                        <span class="showRangeBox">
+                            <label for="showRange">Show:</label>
+                            <select id="showRange" name="showRange">
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                                <option value="15">15</option>
+                                <option value="20">20</option>
+                            </select>
+                            
+                        </span>
+                        <span class="mr-1 font-medium filter-show filspan"><i class="fa-solid fa-sliders"></i> Filter</span>
+                        
+                        <div class="ml-1 filter">
                             <form id="filterForm" method="POST">
-                                <!-- User Role Filter -->
+                                
+                              
                                 <div class="filter-group">
-                                    <label for="servicename">Service:</label>
-                                    <select id="servicename" name="servicename">
-                                        <option value="All">All</option>
-                                        <option value="Consultation">Consultation</option>
-                                        <option value="Laboratory">Laboratory</option>
-                                        <option value="ECG">ECG</option>
-                                        <option value="Ultrasound">Ultrasound</option>
-                                        <option value="AnimalBite">Animal Bite</option>
-                                    </select>
+                                    <label for="serviceType">Service:</label>
+                                    <div class="filterbox">
+                                        <select id="serviceType" name="serviceType">
+                                            <option value="">All</option>
+                                            <option value="Consultation">Consultation</option>
+                                            <option value="X-Ray">X-ray</option>
+                                            <option value="ECG">ECG</option>
+                                            <option value="UTZ">UTZ</option>
+                                            <option value="Laboratory">Laboratory</option>
+                                            <option value="AnimalBite">Animal Bite</option>
+                                        </select>
+                                        <i class="fa-solid fa-sort-down"></i>
+                                    </div>
                                 </div>
 
-                                <!-- Account Status Filter -->
+                                <div class="filter-group">
+                                    <label for="PriorityLevel">Priority Level:</label>
+                                    <div class="filterbox">
+                                        <select id="PriorityLevel" name="PriorityLevel">
+                                            <option value="">All</option>
+                                            <option value="serve">Senior</option>
+                                            <option value="serving">Pregnant</option>
+                                            <option value="pending">PWD</option>
+                                        </select>
+                                        <i class="fa-solid fa-sort-down"></i>
+                                    </div>
+                                </div>
+                                
                                 <div class="filter-group">
                                     <label for="Status">Status:</label>
-                                    <select id="Status" name="Status">
-                                        <option value="">All</option>
-                                        <option value="served">Served</option>
-                                        <option value="serving">Serving</option>
-                                        <option value="pending">Pending</option>
-                                    </select>
+                                    <div class="filterbox">
+                                        <select id="Status" name="Status">
+                                            <option value="">All</option>
+                                            <option value="serve">Served</option>
+                                            <option value="serving">Serving</option>
+                                            <option value="pending">Pending</option>
+                                        </select>
+                                        <i class="fa-solid fa-sort-down"></i>
+                                    </div>
                                 </div>
+                                
 
-                                <!-- Filter Button -->
-                                <button type="submit" class="btn apply-filter font-medium">Apply</button>
                             </form>
                         </div>
-                        <span class="font-medium filter-show"><i class="fa-solid fa-sliders"></i> Filter</span>
+                        
                     </div>
                     
                     <div class="table-cont">
-                    <table>
+                    <table id="queueTable">
                         <thead>
                             <tr>
                                 <td>Service</td>
                                 <td>Queue Number</td>
+                                <td>Priority Level</td>
                                 <td>Status</td>
                             </tr>
                         </thead>
-                        <tbody>
-
-                        </tbody>
+                        <tbody></tbody>
                     </table>
                     </div>
 
@@ -365,7 +411,8 @@
 
             <!------------------------------------------------------------------------------------------------------> 
         </div>
-        <script src="skipped.js"></script>
+        <script src="showOverview.js"></script>
+        <script src="Skipped.js"></script>
         <script src="filter-show.js"></script>
     </body>
 </html>
