@@ -2,7 +2,7 @@
 
 :root{
     --color-primary: #0d5389;
-    --color-header: #297459;
+    --color-header: hsl(148, 33%, 41%);
     --font-color-primary: #141414;
     --font-color-white: #fff;
     --font-color-light: #545554;
@@ -22,6 +22,7 @@
 }
 
 body {
+    overflow: hidden;
     height: 100vh;
     font-family: 'Poppins', sans-serif;
 }
@@ -83,7 +84,7 @@ main{
 }
 .sideNav{
     height: 92vh;
-    width: 100px;
+    width: 8rem;
     background-color: #ffffff;
 }
 .sideNav a{
@@ -158,7 +159,7 @@ main{
 }
 /*====================================*/
 .right{
-    width: 33%;
+    width: 50%;
     padding: 20px;
 }
 .right .token_Num{
@@ -235,76 +236,89 @@ main{
     color: #11376a;
 }
 #end{
-    background-color: #327941;
+    background-color: var(--color-header);
 }
 #end:hover{
     background-color: #e3e3e38b;
 }
+/*--------------------------*/
 .in-que {
     margin-top: 1rem;
-    box-shadow: 1px 1px 1px 2px #021b2337;
-    text-align: center;
-    width: 450px;
-    padding: 10px;
-    border-radius: 2px;
+    display: flex;
+    height:90vh;
+    overflow-y: auto;
+}
+.theQueue{
+    width: 38rem;
 }
 .in-que h3{
     font-size: 15px;
     color:#11376a;
+    margin-bottom: 0.5rem;
 }
-.col-container {
-    display: grid;
-    grid-template-columns: 4rem 13rem 5.5rem auto;
-    gap: 1px; 
-}
-.col {
+.in-que > div{
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 2px;
-    margin-top: 10px;
+    padding: 10px;
 }
-
-.col ul {
-    font-size: 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    justify-content: center;
-    padding: 0; 
-    margin: 0; 
-}
-
-.col ul li {
-    height: 65px;
-    background-color: #0d538908;
-    font-weight: 500;
-    display: flex;
-    align-items: center; 
-    justify-content: center; 
-    list-style: none;
-    padding: 2px;
-    font-size: 14px;
-}
-.num ul li{
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.col ul li button{
+.in-que > div table{
     width: 100%;
-    height: 100%;
-    background-color: #12833cc4;
-    box-shadow: 1px 0.5px 1px 1.4px #021b2337;
-    color: white;
-    border: none;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
+    font-size: 13px;
+}
+.in-que > div table thead tr td{
+    margin-bottom: 1rem;
+    border: 2px solid white;
+}
+.in-que > div table tbody tr td{
+    padding: 5px 13px;
+}
+.in-que .theSkipped button{
+    background: var(--color-header);
+    color: var(--font-fff);
+    padding: 4px 0;
+    width: 100%;
+    font-family: 'Poppins', san serif;
+    font-size: 15px;
+    box-shadow: 1px 1px 1px 1.3px rgb(216, 218, 227);
     border-radius: 5px;
     cursor: pointer;
-    transition: all 400ms ease;
+    transition: all 300ms ease;
 }
-.col ul li button:hover{
+.in-que .theQueue button{
+    background: var(--color-header);
+    color: var(--font-fff);
+    padding: 4px 15px;
+    width: 100%;
+    font-family: 'Poppins', san serif;
+    font-size: 15px;
+    box-shadow: 1px 1px 1px 1.3px rgb(216, 218, 227);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+.in-que > div button:hover{
     box-shadow: none;
+}
+.queue-num{
+    font-weight: 600;
+    font-size: 18px;
+}
+.theSkipped{
+    width: 100%;
+   display: none;
+}
+/*------------------*/
+.topNav h3{
+    color: var(--font-color-white);
+}
+#showSkipped{
+    position: absolute;
+    top: 1.2rem;
+    right: 1.3rem;
+    width: 5rem;
+    font-size: 13px;
+    padding: 5px;
+    background-color: rgb(241 245 249);
+    box-shadow: 0.2px 0.3px 0.2px rgb(214 211 209);
+    border-radius: 5px;
+    color: #000;
 }

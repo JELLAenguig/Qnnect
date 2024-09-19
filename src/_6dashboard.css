@@ -3,7 +3,7 @@ body{
 }
 .wrapper{
     width: 100%;
-    height: 55vh;
+    height: 50vh;
     display: flex;
     gap: 0.7rem; 
     margin-top: 3rem;
@@ -138,7 +138,7 @@ canvas {
 .overview {
     margin-top: 0.5rem;
     width: 100%;
-    max-height: 31vh;
+    height: 37vh;
     background-color: var(--pad-background);
     box-shadow: var(--pad-box-shadow);
     border-radius: var(--box-borderRadius);
@@ -210,10 +210,10 @@ canvas {
     box-shadow: 0.2px 0.3px 0.2px rgb(214 211 209);
     border-radius: var(--box-borderRadius);
 }
-.showRangeBox select{
+.showRangeBox input{
+    width: 2.4rem;
     cursor: pointer;
     font-weight: 500;
-    padding: 5px 4px;
     text-align: center;
 }
 /*------------------------*/
@@ -221,10 +221,19 @@ canvas {
     font-size: 1rem;
     color: var(--second-primary);
 }
+.queuetablebox{
+    display: block;
+}
 .table-cont {
-    flex: 1; 
     overflow-y: auto; 
     padding: 0 0.5rem; 
+    height: 73% !important;
+}
+.table-cont span{
+    position:absolute;
+    bottom: 0;
+    padding: 7px 0;
+    width: 100%;
 }
 .table-cont table {
     width: 100%;
@@ -240,7 +249,7 @@ canvas {
 .table-cont table thead td,
 .table-cont table tbody td {
     padding: 5px;
-    font-size: 13px;
+
     border: 2px solid white;
 }
 .table-cont table tbody td {
@@ -413,11 +422,11 @@ canvas {
 @media (max-height: 695.5px) {
     .right-pad .left-side .box {
         height: 100%;
-        padding: 0.49rem;
+        padding: 3.1px;
     }
 }
 @media (min-height: 795.5px) {
     .right-pad .left-side .box {
-        height: 10.4vh;
+        height: 9.3vh;
     }
 }

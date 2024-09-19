@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="_2ndAdmin.css">
+    <link rel="stylesheet" href="_moderator.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Staff || RHU Q-nnect</title>
 </head>
 <body>
@@ -36,6 +37,8 @@
                     setInterval(updateDateTime, 1000);
             </script>
 
+            <h3>Consultation</h3>                    
+
             <div class="adminProfile">
                 <div class="adminName">
                     <p><b>Dr. Juan Dela Cruz</b></p>
@@ -66,7 +69,7 @@
             <div class="right">
                 <div class="token_Num">
                     <h3>Patient</h3>
-                    <p id="token_num">A0001</p>
+                    <p id="token_num"></p>
                 </div>
                 <div class="btns1">
                     <button id="call">Call</button>
@@ -78,40 +81,48 @@
                 </div>
             </div>
             <div class="in-que">
-                <h3>Patient in Queue</h3>
-                <div class="col-container">
-                    <div class="col num">
-                        <ul>
-                            <li>A002</li>
-                            <li>A003</li>
-                            <li>A004</li>
-                        </ul>
-                    </div>
-                    <div class="col name">
-                        <ul>
-                            <li>Juan Dela Cruz</li>
-                            <li>John Doe</li>
-                            <li>Test Name</li>
-                        </ul>
-                    </div>
-                    <div class="col">
-                        <ul>
-                        <li></li>
-                        <li>Senior Citizen</li>
-                        <li>PWD</li>
-                        </ul>
-                    </div>
-                    <div class="col">
-                        <ul>
-                            <li><button>Next</button></li>
-                            <li><button>Next</button></li>
-                            <li><button>Next</button></li>
-                        </ul>
-                    </div>
+                <div class="theQueue">
+                    <button id="showSkipped">Skipped <i class="fa-solid fa-chevron-right"></i></button>
+                    <h3>Patient in Queue</h3>
+                    <table id="PatientQueue">
+                        <thead>
+                            <tr>
+                                <td>Number</td>
+                                <td>Priority Level</td>
+                                <td>Action</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="queue-num">A001</td>
+                                <td>Regular</td>
+                                <td><button id="CallNext">Next</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="theSkipped">
+                    <h3>Skipped Patients</h3>
+                    <table id = "patientSkipped">
+                        <thead>
+                            <tr>
+                                <td>Number</td>
+                                <td>Action</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="queue-num">A023</td>
+                                <td><button id="CallSkipped">Next</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-        
     </main>
+    <!--------------------------------------SCRIPTS------------------------------------------->
+    <script src="clickSkipped.js"></script>
 </body>
 </html>

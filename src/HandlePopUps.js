@@ -26,13 +26,16 @@ $(document).ready(function() {
 
     // Handle "Yes" button click in the alert
     $('#Yes').on('click', function() {
+        $('.alert-container').hide();
         $('.selectApplicable').css({
             display: 'flex' // Show the applicable options
         });
+        
     });
 
     // Handle button clicks inside the .op-card to get selected option
     $('.op-card button').on('click', function() {
+        
         chosenPriority = $(this).attr('id');
         console.log("Selected priority: " + chosenPriority);
 
@@ -54,6 +57,7 @@ $(document).ready(function() {
                 $('#hiddenForm').submit();
             }
         }
+        
     });
     // Handle "Consultation" button click
     $('#consultation').on('click', function() {

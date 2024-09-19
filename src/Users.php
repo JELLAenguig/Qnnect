@@ -96,7 +96,7 @@
                             <div class="findUser">
                             <form class='form-inline'>
                                 <div class="input-group">
-                                    <input type='text' id='search' class="search-form">
+                                    <input type='text' id='search' class="search-form" placeholder="Search...">
                                     <span class="input-group-btn" style="width:39px">
                                     <button id="search-this" type="submit" class="search-btn">
                                         <i class="fa fa-search"></i>

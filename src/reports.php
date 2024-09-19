@@ -9,6 +9,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <title>ADMIN || RHU Q-NNECT</title>
@@ -100,157 +101,19 @@
             </aside>
             <!-------------------------------MAIN CONTENT HERE...---------------------------------------->
             <main>
-            <div class="report-box">
-                <div class="served-body">
-                    <h3>Patient Served</h3>
-                    <div class="year-selection">
-                        <select id="yearDropdownPrimary">
-                            <!-- Options will be dynamically generated -->
-                        </select>
-                    </div>
-
-                    <canvas id="MonthlyChart"></canvas>
-                    <div class="download-btn">
-                        <label for="download-option"><i class="fa-solid fa-download"></i> Download: </label>
-                        <select id="download-option" onchange="handleDownload(this.value)">
-                            <option value="" disabled selected>Select format...</option>
-                            <option value="PDF">PDF</option>
-                            <option value="PNG">PNG</option>
-                            <option value="JPEG">JPEG</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="casesPerService">
-                    <h3>Number of Patients Per Services</h3>
-                    <div class="filter-month">
-                        <select id="Month" name="Month">
-                            <option value="January">January</option>
-                            <option value="February">February</option>
-                            <option value="March">March</option>
-                            <option value="April">April</option>
-                            <option value="May">May</option>
-                            <option value="June">June</option>
-                            <option value="July">July</option>
-                            <option value="August">August</option>
-                            <option value="September">September</option>
-                            <option value="October">October</option>
-                            <option value="November">November</option>
-                            <option value="December">December</option>
-                        </select>
-                    </div>
-                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-                    <script>
-                        $(document).ready(function() {
-                            const initialYearPrimary = 2024;
-                            const finalYearPrimary = 5000;
-
-                            function populateYearDropdownPrimary() {
-                                const $dropdownPrimary = $('#yearDropdownPrimary');
-                                
-                                // Clear existing options
-                                $dropdownPrimary.empty();
-
-                                for (let year = initialYearPrimary; year <= finalYearPrimary; year++) {
-                                    $dropdownPrimary.append($('<option>', {
-                                        value: year,
-                                        text: year
-                                    }));
-                                }
-                            }
-
-                            function handleYearChangePrimary() {
-                                const selectedYearPrimary = $('#yearDropdownPrimary').val();
-                                console.log('Selected Year from Primary Dropdown:', selectedYearPrimary); // Handle the selected year
-                            }
-
-                            // Initialize the first dropdown with years
-                            populateYearDropdownPrimary();
-
-                            // Bind the change event to the dropdown
-                            $('#yearDropdownPrimary').change(handleYearChangePrimary);
-                        });
-
-                        $(document).ready(function() {
-                            const initialYear1 = 2024;
-                            const finalYear1 = 5000;
-
-                            function populateYearDropdown1() {
-                                const $dropdown1 = $('#year1');
-                                
-                                // Clear existing options
-                                $dropdown1.empty();
-
-                                for (let year = initialYear1; year <= finalYear1; year++) {
-                                    $dropdown1.append($('<option>', {
-                                        value: year,
-                                        text: year
-                                    }));
-                                }
-                            }
-
-                            function handleYearChange1() {
-                                const selectedYear1 = $('#year1').val();
-                                console.log('Selected Year from Dropdown 1:', selectedYear1); // Handle the selected year
-                            }
-
-                            // Initialize the first dropdown with years
-                            populateYearDropdown1();
-
-                            // Bind the change event to the dropdown
-                            $('#year1').change(handleYearChange1);
-                        });
-
-                        $(document).ready(function() {
-                            const initialYear2 = 2025;
-                            const finalYear2 = 5000;
-
-                            function populateYearDropdown2() {
-                                const $dropdown2 = $('#year2');
-                                
-                                // Clear existing options
-                                $dropdown2.empty();
-
-                                for (let year = initialYear2; year <= finalYear2; year++) {
-                                    $dropdown2.append($('<option>', {
-                                        value: year,
-                                        text: year
-                                    }));
-                                }
-                            }
-
-                            function handleYearChange2() {
-                                const selectedYear2 = $('#year2').val();
-                                console.log('Selected Year from Dropdown 2:', selectedYear2); // Handle the selected year
-                            }
-
-                            // Initialize the first dropdown with years
-                            populateYearDropdown2();
-
-                            // Bind the change event to the dropdown
-                            $('#year2').change(handleYearChange2);
-                        });
-                    </script>
-                        <div class="permonth-table">
-                            <ul class="Service_perMonth">
-                                <h3>Services</h3>
-                                <li>Consultation</li>
-                                <li>Laboratory</li>
-                                <li>X-Ray</li>
-                                <li>ECG</li>
-                                <li>Ultrasound</li>
-                            </ul>
-                            <ul class="total_perMonth">
-                                <h3>Total No.</h3>
-                                <li>000</li>
-                                <li>000</li>
-                                <li>000</li>
-                                <li>000</li>
-                                <li>000</li>
-                            </ul>
+                <div class="report-box">
+                    <div class="served-body">
+                        <h3>Patient Served</h3>
+                        <div class="year-selection">
+                            <select id="yearDropdownPrimary">
+                                <!-- Options will be dynamically generated -->
+                            </select>
                         </div>
+
+                        <canvas id="MonthlyChart"></canvas>
                         <div class="download-btn">
                             <label for="download-option"><i class="fa-solid fa-download"></i> Download: </label>
-                            <select name="download-option" id="download-option">
+                            <select id="download-option" onchange="handleDownload(this.value)">
                                 <option value="" disabled selected>Select format...</option>
                                 <option value="PDF">PDF</option>
                                 <option value="PNG">PNG</option>
@@ -258,115 +121,254 @@
                             </select>
                         </div>
                     </div>
-                    
-                </div>
-                    
-                <div class="SecChart">
-                <div class="cases">
-                        <h3>Total of Animal Bite Cases</h3>
-                        <div class="box-pad">
-                            <div class="table">
-                                <div class="month">
-                                    <h4>Month</h4>
-                                    <ul>
-                                        <li>January</li>
-                                        <li>February</li>
-                                        <li>March</li>
-                                        <li>April</li>
-                                        <li>May</li>
-                                        <li>June</li>
-                                        <li>July</li>
-                                        <li>August</li>
-                                        <li>September</li>
-                                        <li>October</li>
-                                        <li>November</li>
-                                        <li>December</li>
-                                    </ul>
-                                </div>
-
-                                <div class="year1">
-                                    <div class="optionyear">
-                                        <select id="year1" onchange="handleYearChange1()">
-                                            <!-- Options will be dynamically generated -->
-                                        </select> 
-                                    </div>
-                                    
-                                    <ul>
-                                        <li>500</li>
-                                        <li>504</li>
-                                        <li>340</li>
-                                        <li>599</li>
-                                        <li>566</li>
-                                        <li>345</li>
-                                        <li>323</li>
-                                        <li>453</li>
-                                        <li>234</li>
-                                        <li>343</li>
-                                        <li>563</li>
-                                        <li>142</li>
-                                    </ul>
-                                </div>
-                                <div class="year2">
-                                    <div class="optionyear">
-                                        <select id="year2" onchange="handleYearChange2()">
-                                            <!-- Options will be dynamically generated -->
-                                        </select> 
-                                    </div>
-                                    <ul>
-                                        <li>500</li>
-                                        <li>504</li>
-                                        <li>340</li>
-                                        <li>599</li>
-                                        <li>566</li>
-                                        <li>345</li>
-                                        <li>323</li>
-                                        <li>453</li>
-                                        <li>0</li>
-                                        <li>0</li>
-                                        <li>0</li>
-                                        <li>0</li>
-                                    </ul>
-                                </div>
-
-                                <div class="diff">
-                                    <h4>% Diff.</h4>
-                                    <ul>
-                                        <li>0%</li>
-                                        <li>0%</li>
-                                        <li>0%</li>
-                                        <li>0%</li>
-                                        <li>0%</li>
-                                        <li>0%</li>
-                                        <li>0%</li>
-                                        
-                                    </ul>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="total">
-                            <ul>
-                                <li>Total</li>
-                            </ul>
-                            <ul>
-                                <li> 4,912</li>
-                            </ul>
-                            <ul>
-                                <li>3,630</li>
-                            </ul>
-                        </div>
-                        <div class="download-btn">
-                            <label for="download-option"><i class="fa-solid fa-download"></i> Download: </label>
-                                <select id="download-option">
-                                <option value="" disabled selected>Select format...</option>    
-                                <option value="PDF">PDF</option>
-                                <option value="PNG">PNG</option>
-                                <option value="JPEG">JPEG</option>
+                    <div class="casesPerService">
+                        <h3>Number of Patients Per Services</h3>
+                        <div class="filter-month">
+                            <select id="Month" name="Month">
+                                <option value="January">January</option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
                             </select>
                         </div>
+                        <script>
+                            $(document).ready(function() {
+                                const initialYearPrimary = 2024;
+                                const finalYearPrimary = 5000;
+
+                                function populateYearDropdownPrimary() {
+                                    const $dropdownPrimary = $('#yearDropdownPrimary');
+                                    
+                                    // Clear existing options
+                                    $dropdownPrimary.empty();
+
+                                    for (let year = initialYearPrimary; year <= finalYearPrimary; year++) {
+                                        $dropdownPrimary.append($('<option>', {
+                                            value: year,
+                                            text: year
+                                        }));
+                                    }
+                                }
+
+                                function handleYearChangePrimary() {
+                                    const selectedYearPrimary = $('#yearDropdownPrimary').val();
+                                    console.log('Selected Year from Primary Dropdown:', selectedYearPrimary); // Handle the selected year
+                                }
+
+                                // Initialize the first dropdown with years
+                                populateYearDropdownPrimary();
+
+                                // Bind the change event to the dropdown
+                                $('#yearDropdownPrimary').change(handleYearChangePrimary);
+                            });
+
+                            $(document).ready(function() {
+                                const initialYear1 = 2024;
+                                const finalYear1 = 5000;
+
+                                function populateYearDropdown1() {
+                                    const $dropdown1 = $('#year1');
+                                    
+                                    // Clear existing options
+                                    $dropdown1.empty();
+
+                                    for (let year = initialYear1; year <= finalYear1; year++) {
+                                        $dropdown1.append($('<option>', {
+                                            value: year,
+                                            text: year
+                                        }));
+                                    }
+                                }
+
+                                function handleYearChange1() {
+                                    const selectedYear1 = $('#year1').val();
+                                    console.log('Selected Year from Dropdown 1:', selectedYear1); // Handle the selected year
+                                }
+
+                                // Initialize the first dropdown with years
+                                populateYearDropdown1();
+
+                                // Bind the change event to the dropdown
+                                $('#year1').change(handleYearChange1);
+                            });
+
+                            $(document).ready(function() {
+                                const initialYear2 = 2025;
+                                const finalYear2 = 5000;
+
+                                function populateYearDropdown2() {
+                                    const $dropdown2 = $('#year2');
+                                    
+                                    // Clear existing options
+                                    $dropdown2.empty();
+
+                                    for (let year = initialYear2; year <= finalYear2; year++) {
+                                        $dropdown2.append($('<option>', {
+                                            value: year,
+                                            text: year
+                                        }));
+                                    }
+                                }
+
+                                function handleYearChange2() {
+                                    const selectedYear2 = $('#year2').val();
+                                    console.log('Selected Year from Dropdown 2:', selectedYear2); // Handle the selected year
+                                }
+
+                                // Initialize the first dropdown with years
+                                populateYearDropdown2();
+
+                                // Bind the change event to the dropdown
+                                $('#year2').change(handleYearChange2);
+                            });
+                        </script>
+                            <div class="permonth-table">
+                                <ul class="Service_perMonth">
+                                    <h3>Services</h3>
+                                    <li>Consultation</li>
+                                    <li>Laboratory</li>
+                                    <li>X-Ray</li>
+                                    <li>ECG</li>
+                                    <li>Ultrasound</li>
+                                </ul>
+                                <ul class="total_perMonth">
+                                    <h3>Total No.</h3>
+                                    <li>000</li>
+                                    <li>000</li>
+                                    <li>000</li>
+                                    <li>000</li>
+                                    <li>000</li>
+                                </ul>
+                            </div>
+                            <div class="download-btn">
+                                <label for="download-option"><i class="fa-solid fa-download"></i> Download: </label>
+                                <select name="download-option" id="download-option">
+                                    <option value="" disabled selected>Select format...</option>
+                                    <option value="PDF">PDF</option>
+                                    <option value="PNG">PNG</option>
+                                    <option value="JPEG">JPEG</option>
+                                </select>
+                            </div>
+                        </div>
+                        
                     </div>
+                        
+                    <div class="SecChart">
+                    <div class="cases">
+                            <h3>Total of Animal Bite Cases</h3>
+                            <div class="box-pad">
+                                <div class="table">
+                                    <div class="month">
+                                        <h4>Month</h4>
+                                        <ul>
+                                            <li>January</li>
+                                            <li>February</li>
+                                            <li>March</li>
+                                            <li>April</li>
+                                            <li>May</li>
+                                            <li>June</li>
+                                            <li>July</li>
+                                            <li>August</li>
+                                            <li>September</li>
+                                            <li>October</li>
+                                            <li>November</li>
+                                            <li>December</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="year1">
+                                        <div class="optionyear">
+                                            <select id="year1" onchange="handleYearChange1()">
+                                                <!-- Options will be dynamically generated -->
+                                            </select> 
+                                        </div>
+                                        
+                                        <ul>
+                                            <li>500</li>
+                                            <li>504</li>
+                                            <li>340</li>
+                                            <li>599</li>
+                                            <li>566</li>
+                                            <li>345</li>
+                                            <li>323</li>
+                                            <li>453</li>
+                                            <li>234</li>
+                                            <li>343</li>
+                                            <li>563</li>
+                                            <li>142</li>
+                                        </ul>
+                                    </div>
+                                    <div class="year2">
+                                        <div class="optionyear">
+                                            <select id="year2" onchange="handleYearChange2()">
+                                                <!-- Options will be dynamically generated -->
+                                            </select> 
+                                        </div>
+                                        <ul>
+                                            <li>500</li>
+                                            <li>504</li>
+                                            <li>340</li>
+                                            <li>599</li>
+                                            <li>566</li>
+                                            <li>345</li>
+                                            <li>323</li>
+                                            <li>453</li>
+                                            <li>0</li>
+                                            <li>0</li>
+                                            <li>0</li>
+                                            <li>0</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="diff">
+                                        <h4>% Diff.</h4>
+                                        <ul>
+                                            <li>0%</li>
+                                            <li>0%</li>
+                                            <li>0%</li>
+                                            <li>0%</li>
+                                            <li>0%</li>
+                                            <li>0%</li>
+                                            <li>0%</li>
+                                            
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="total">
+                                <ul>
+                                    <li>Total</li>
+                                </ul>
+                                <ul>
+                                    <li> 4,912</li>
+                                </ul>
+                                <ul>
+                                    <li>3,630</li>
+                                </ul>
+                            </div>
+                            <div class="download-btn">
+                                <label for="download-option"><i class="fa-solid fa-download"></i> Download: </label>
+                                    <select id="download-option">
+                                    <option value="" disabled selected>Select format...</option>    
+                                    <option value="PDF">PDF</option>
+                                    <option value="PNG">PNG</option>
+                                    <option value="JPEG">JPEG</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space"></div>
+                    
                 </div>
-                <div class="space"></div>
                 <script>
                     // Function to generate year options for dropdowns
                     function populateYearDropdowns() {

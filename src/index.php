@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="__02index.css">
-    <link rel="stylesheet" href="_PopUps.css">
+    <link rel="stylesheet" href="_Pop-Ups.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Mariveles || RHU Q-nnect</title>
 </head>
@@ -27,11 +27,9 @@
     </div>
     <div class="selectApplicable">
         <div class="op-card">
-            <p>Please select what is applicable to you.</p>
-            <button id="PWD">PWD</button>
-            <button id="Senior">Senior Citizen</button>
-            <button id="Pregnant">Pregnant</button>
-            <button id="Regular">Regular</button>
+            <p>Are you PWD, Pregnant or Senior Citizen?</p>
+            <button id="Priority">YES</button>
+            <button id="Regular">NO</button>
         </div>
     </div>
     <div class="title">
@@ -73,6 +71,6 @@
         </div>
     </div>
 
-    <script src="Requests.js"></script>
+    <script src="HandlePopUps.js"></script>
 </body>
 </html>
